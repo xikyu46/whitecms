@@ -7,13 +7,31 @@ function docroot($location=false){
 }
 
 function tpldir($location=false){
+	$CI =& get_instance();
+	$theme = $CI->config->item('theme');
 	$location = preg_replace('#^[/]+#','',$location);
-	return '../../templates/'.$location;
+	return '../../templates/'.$theme.'/'.$location;
 }
 
 function tplurl($location=false){
+	$CI =& get_instance();
+	$theme = $CI->config->item('theme');
 	$location = preg_replace('#^[/]+#','',$location);
-	return base_url('templates/'.$location);
+	return base_url('templates/'.$theme.'/'.$location);
+}
+
+function pageurl($location=false){
+	$CI =& get_instance();
+	$theme = $CI->config->item('theme');
+	$location = preg_replace('#^[/]+#','',$location);
+	return base_url('templates/'.$theme.'/page/'.$location);
+}
+
+function incurl($location=false){
+	$CI =& get_instance();
+	$theme = $CI->config->item('theme');
+	$location = preg_replace('#^[/]+#','',$location);
+	return base_url('templates/'.$theme.'/page/_includes/'.$location);
 }
 
 function view_mod($modulename=false,$function=false){

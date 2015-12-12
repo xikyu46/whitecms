@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = "http://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME'])).'/';
-
+$config['theme'] = 'default';
 
 /*
 |--------------------------------------------------------------------------
@@ -267,7 +267,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 | application/views/errors/ directory.  Use a full server path with trailing slash.
 |
 */
-$config['error_views_path'] = getcwd().'/templates/errors/';
+$config['error_views_path'] = getcwd().'/templates/'.$config['theme'].'/errors/';
 
 /*
 |--------------------------------------------------------------------------
@@ -504,3 +504,4 @@ $config['rewrite_short_tags'] = TRUE;
 */
 $config['proxy_ips'] = '';
 $config['document_root'] = getcwd().'/';
+

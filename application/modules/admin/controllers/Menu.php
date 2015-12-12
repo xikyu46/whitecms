@@ -1,11 +1,20 @@
 <?php
 
-Class Menu extends MX_Controller{
+Class Menu extends ADMIN_Controller{
 	function edit($id=false){
 		if(empty($_POST)){
 			$menu = db_read('menu_item',array('id' => $id));
 			if(!$menu){
 				$menu = db_read('menu_item');
+			}
+			if(!$menu){
+				redirect('admin/menu/add');
+			}
+			$this->load->module('mod_page');
+			$view['page'] = false;
+			$pageResult = $this->mod_page->gets();
+			if($pageResult['resultCode'] == 1000){
+				$view['page'] = $pageResult['resultData']['page'];
 			}
 			$view['menu'] = $menu;
 			$this->load->view(tpldir('admin/menu/index_view'),$view);

@@ -11,17 +11,10 @@ if [ "$1" != "" ]
 
 
 		
-		for i in `/usr/bin/svn status | grep '!' | awk '{print $2}'`
-			do
-				svn delete $i
-			done
+		/usr/bin/git  add --all .
 
-		for i in `/usr/bin/svn status | grep '?' | awk '{print $2}'`
-			do
-				svn add $i
-			done
 			
-		/usr/bin/svn commit -m "$1"
+#		/usr/bin/svn commit -m "$1"
 
 	else
 		echo "please give comment"	

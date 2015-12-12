@@ -1,9 +1,10 @@
 <?php
 
-Class Page extends MX_Controller{
+Class Page extends ADMIN_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->module('mod_page');
+		$this->load->module('mod_template');
 	}
 	
 	function edit($id=false){
@@ -13,6 +14,9 @@ Class Page extends MX_Controller{
 			if(!$resultPages){
 				redirect(base_url('admin/page/add'));
 			}
+			$resultTemplate = $this->mod_template->get();
+			
+			$view['templates'] = $resultTemplate['resultData'];
 			$view['pages'] = $resultPages;
 			$view['page'] = ($resultPage) ? $resultPage['resultData']['page'] : $resultPages[0];
 			
@@ -30,6 +34,8 @@ Class Page extends MX_Controller{
 	
 	function add(){
 		if(empty($_POST)){
+			$resultTemplate = $this->mod_template->get();
+			$view['templates'] = $resultTemplate['resultData'];
 			$view['pages'] = db_reads('page');
 			$this->load->view(tpldir('admin/page/add_view'),$view);
 		}else{

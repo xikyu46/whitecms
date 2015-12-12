@@ -1,2 +1,0 @@
-# whitecms
-cms putih

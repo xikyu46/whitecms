@@ -1,18 +1,20 @@
 <?php
-
-
-
 Class Login extends MX_Controller{
 	function __construct(){
 		parent::__construct();
 	}
 	
-	
 	function index(){
-		$this->load->view(tpldir('admin/header_view'));
-		$this->load->view(tpldir('admin/login/index_view'));
-		$this->load->view(tpldir('admin/footer_view'));
-		if($_SERVER['REQUEST_METHOD'] == "POST"){
+		if($_SERVER['REQUEST_METHOD'] == "GET"){
+			$admin_auth = $this->session->userdata('admin_auth');
+			session_write_close();
+			if($admin_auth){
+				redirect('admin/dashboard');
+			}
+			$this->load->view(tpldir('admin/header_view'));
+			$this->load->view(tpldir('admin/login/index_view'));
+			$this->load->view(tpldir('admin/footer_view'));
+		}else{
 			$username = $this->input->post('username');
 			$password = hash('sha256',$this->input->post('password'));
 			
@@ -24,5 +26,10 @@ Class Login extends MX_Controller{
 			$this->session->set_userdata('adminid',$adminRow->id);
 			redirect(base_url('admin/dashboard'));
 		}
+	}
+	
+	function out(){
+		$this->session->sess_destroy();
+		redirect(base_url('admin/login'));
 	}
 }

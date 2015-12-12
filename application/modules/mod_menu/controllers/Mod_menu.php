@@ -8,7 +8,7 @@ Class Mod_menu extends MX_Controller{
 		$tree = $this->Menu_model->reads();
 		$result['resultCode'] = 1000;
 		$result['resultMsg'] = "OK";
-		$result['resultData'] = $this->formatTree($tree,$parent_id);
+		$result['resultData'] = ($tree) ? $this->formatTree($tree,$parent_id) : false;
 		return $result;
 	}
 	
@@ -60,23 +60,37 @@ Class Mod_menu extends MX_Controller{
 		$menu = $this->get();
 		if($menu['resultCode'] == 1000){
 			$view['menu'] = $menu['resultData'];
-			$this->load->view(tpldir('admin/mod_menu/admin_view'),$view);
+			$this->load->view(tpldir('modules/mod_menu/admin_view'),$view);
 		}
 	}
     
 	function outclient(){
-		$view['menu'] = $this->reads();
-		$this->load->view(tpldir('admin/mod_menu/user_view'),$view);
+		$this->load->model('Page_model');
+		$menu = $this->get();
+		$pageResult = $this->Page_model->get_page_list();
+		$pages=false;
+		if($pageResult){
+			foreach($pageResult as  $pageRow){
+				$pages[$pageRow->id] = $pageRow->url;
+			}
+		}
+		if($menu['resultCode'] == 1000){
+			$view['menu'] = $menu['resultData'];
+			$view['pages'] = $pages;
+			$this->load->view(tpldir('modules/mod_menu/index_view'),$view);
+		}
 	}
 	
 	//private function
 	
 	private function formatTree($tree=array(), $parent=0){
 		$tree2 = array();
-		foreach($tree as $i => $item){
-			if($item->parent_id == $parent){
-				$tree2[$item->id] = $item;
-				$tree2[$item->id]->submenu = $this->formatTree($tree, $item->id);
+		if($tree){
+			foreach($tree as $i => $item){
+				if($item->parent_id == $parent){
+					$tree2[$item->id] = $item;
+					$tree2[$item->id]->submenu = $this->formatTree($tree, $item->id);
+				}
 			}
 		}
 		return $tree2;
