@@ -13,7 +13,7 @@ if [ "$1" != "" ]
 		
 		/usr/bin/git  add --all .
    		/usr/bin/git commit -m "$1"
-   		#/usr/bin/git push
+   		/usr/bin/git push
 	else
 		echo "please give comment"	
 	fi
