@@ -12,10 +12,8 @@ if [ "$1" != "" ]
 
 		
 		/usr/bin/git  add --all .
-
-			
-#		/usr/bin/svn commit -m "$1"
-
+   		/usr/bin/git commit -m "$1"
+   		#/usr/bin/git push
 	else
 		echo "please give comment"	
 	fi
