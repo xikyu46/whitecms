@@ -31,6 +31,9 @@
 					<li>
 						<a href="<?= base_url('admin/sosmed');?>"><i class="fa fa-fw fa-twitter"></i> Social Media</a>
 					</li>
+					<li>
+						<a href="<?= base_url('admin/news');?>"><i class="fa fa-fw fa-twitter"></i> News</a>
+					</li>
 				</ul>
 			</li>
 			<li>
