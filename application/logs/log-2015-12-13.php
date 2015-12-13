@@ -356,3 +356,54 @@ ERROR - 2015-12-13 15:03:21 --> 404 Page Not Found: /index
 ERROR - 2015-12-13 15:03:23 --> 404 Page Not Found: /index
 ERROR - 2015-12-13 15:14:47 --> Query error: Table 'whitecms7.mod_newsticker' doesn't exist - Invalid query: SELECT *
 FROM `mod_newsticker`
+ERROR - 2015-12-13 15:26:56 --> Severity: Notice --> Trying to get property of non-object /srv/www/vhost/whitecms/templates/surakarta/admin/dashboard_view.php 43
+ERROR - 2015-12-13 15:26:56 --> Severity: Notice --> Trying to get property of non-object /srv/www/vhost/whitecms/templates/surakarta/admin/dashboard_view.php 43
+ERROR - 2015-12-13 15:26:56 --> Severity: Notice --> Trying to get property of non-object /srv/www/vhost/whitecms/templates/surakarta/admin/dashboard_view.php 43
+ERROR - 2015-12-13 15:26:56 --> Severity: Notice --> Trying to get property of non-object /srv/www/vhost/whitecms/templates/surakarta/admin/dashboard_view.php 43
+ERROR - 2015-12-13 15:26:56 --> Severity: Notice --> Trying to get property of non-object /srv/www/vhost/whitecms/templates/surakarta/admin/dashboard_view.php 43
+ERROR - 2015-12-13 15:27:08 --> Query error: Table 'whitecms7.newsticker' doesn't exist - Invalid query: SELECT *
+FROM `newsticker`
+WHERE `id` = '1'
+ERROR - 2015-12-13 15:36:04 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:36:08 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:36:11 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:33 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:33 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:33 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:33 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:33 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:34 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:34 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:34 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:34 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:34 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:34 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:34 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:38 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:48 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:48 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:48 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:48 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:58 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:58 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:58 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:58 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:59 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:59 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:59 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:37:59 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:17 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:17 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:17 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:17 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:18 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:18 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:18 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:18 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:38:29 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:39:15 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:39:36 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:39:40 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:39:43 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:39:45 --> 404 Page Not Found: /index
+ERROR - 2015-12-13 15:39:48 --> 404 Page Not Found: /index

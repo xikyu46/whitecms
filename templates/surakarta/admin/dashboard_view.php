@@ -39,8 +39,8 @@
 										<td><?= $newstickerRow->id;?></td>
 										<td><?= $newstickerRow->text;?></td>
 										<td><?= $newstickerRow->url;?></td>
-										<td><? if($newstickerRow->status){ echo "Aktif";}else{echo "Inactivf";}?></td>
-										<td><a href="#">Edit</a></td>
+										<td><? if($newstickerRow->status){ echo "Active";}else{echo "Inactive";}?></td>
+										<td><a href="<?= base_url('admin/newsticker/edit/'.$newstickerRow->id);?>">Edit</a></td>
 									</tr>
 									<? }?>
 									

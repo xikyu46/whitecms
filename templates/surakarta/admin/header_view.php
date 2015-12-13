@@ -14,9 +14,13 @@
 		
 		<script src="<?= tplurl('admin/includes/js/jquery.js');?>"></script>
 		<script src="<?= tplurl('admin/includes/js/bootstrap.min.js');?>"></script>
-		<script src="<?= tplurl('admin/includes/js/plugins/morris/raphael.min.js');?>"></script>
-		<script src="<?= tplurl('admin/includes/js/plugins/morris/morris.min.js');?>"></script>
-		<script src="<?= tplurl('admin/includes/js/plugins/morris/morris-data.js');?>"></script>
+<!-- 		<script src="<?= tplurl('admin/includes/js/plugins/morris/raphael.min.js');?>"></script> -->
+<!-- 		<script src="<?= tplurl('admin/includes/js/plugins/morris/morris.min.js');?>"></script> -->
+<!-- 		<script src="<?= tplurl('admin/includes/js/plugins/morris/morris-data.js');?>"></script> -->
+		<script src="<?= tplurl('admin/includes/js/bootbox.min.js');?>"></script>
+		<script src="<?= tplurl('admin/includes/js/jquery.form.min.js');?>"></script>
+		<script src="<?= tplurl('admin/includes/js/jquery.validate.min.js');?>"></script>
+		<script src="<?= tplurl('admin/includes/js/scripts.js');?>"></script>
 		<title>Admin | Pemerintah Kota Surakarta</title> <!-- title dijadikan variabel di setting website -->
 	</head>
 	<body>
