@@ -73,7 +73,10 @@
 										<td><?= date('d/m/Y',$pageRow->update);?></td>
 										<td><?= $pageRow->author;?></td>
 										<td><? if($pageRow->status){echo "Active";}else{echo "Inactive";};?></td>
-										<td><a href="<?= base_url('admin/page/edit/'.$pageRow->id);?>">Edit</a> | <a href="#delete"  onclick="deletePage('<?= $pageRow->id;?>');">Delete</a></td>
+										<td>
+										<a href="<?= base_url('admin/page/edit/'.$pageRow->id);?>">Edit</a> | 
+										<a href="#delete"  onclick="deletePage('<?= $pageRow->id;?>');">Delete</a>
+										</td>
 									</tr>
 									<? }?>
 								</tbody>

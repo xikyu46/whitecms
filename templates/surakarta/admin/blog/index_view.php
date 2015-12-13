@@ -47,7 +47,7 @@
 								</div>
 							</div>
 							<div class="col-md-4">
-								<a class="btn btn-success pull-right" href="/post-edit/" role="button"><i class="fa fa-plus"></i> New Post</a>
+								<a class="btn btn-success pull-right" href="<?= base_url('admin/blog/add');?>" role="button"><i class="fa fa-plus"></i> New Post</a>
 							</div>
 						</div>
 						<hr />

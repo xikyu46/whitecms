@@ -25,5 +25,20 @@ Class Video extends ADMIN_Controller{
 	}
 	
 	function edit($id=false){
+		if(empty($_POST)){
+			$view['video'] = db_read('mod_video',array('id' => $id));
+			$this->load->view(tpldir('admin/extension/video/edit_view'),$view);
+		}else{
+			$result = jsonSrc();
+			$id = $this->input->post('id');
+			$updateBanner['url'] = $this->input->post('url');
+			$updateBanner['status'] = $this->input->post('status');
+			$updateBanner['text'] = $this->input->post('text');
+			db_update('mod_video',array('id' => $id),$updateBanner);
+			$result['resultCode'] = 1000;
+			$result['resultMsg'] = "Video Updated";
+			$result['resultData']['openUrl'] = base_url('admin/video');
+			echo json_encode($result);
+		}
 	}
 }

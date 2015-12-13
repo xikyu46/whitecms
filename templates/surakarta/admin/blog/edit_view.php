@@ -5,17 +5,17 @@
 		<div class="row"> <!-- start: Page Heading -->
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Page <small>Edit</small>
+					Post <small>Edit</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li>
 						<i class="fa fa-dashboard"></i> Dashboard 
 					</li>
 					<li>
-						<i class="fa fa-list"></i> Pages
+						<i class="fa fa-list"></i> Post
 					</li>
 					<li class="active">
-						<i class="fa fa-edit"></i> Page Edit 
+						<i class="fa fa-edit"></i> Post Edit 
 					</li>
 				</ol>
 			</div>

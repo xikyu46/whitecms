@@ -1,70 +1,53 @@
 <? $this->load->view(tpldir('admin/header_view'));?>
 <? $this->load->view(tpldir('admin/navbar_view'));?>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-3 sidebar">
-			<? if($categories){?>
-				<ul class="nav nav-sidebar">
-				<? foreach($categories as $categoryRow){?>
-					<li><a href="<?= base_url('admin/category/edit/'.$categoryRow->id);?>"><?= $categoryRow->name;?></a></li>
-				<? }?>
-				</ul>
-			<? }?>
-			<a href="<?= base_url('admin/category/add');?>" class="btn btn-primary">Add Category</a>
-		</div>
-		
-			<div class="col-sm-9">
-		
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <i class="glyphicon glyphicon-wrench pull-right"></i>
-                                <h4>New Post for Category <?= $category->name;?></h4>
-                            </div>
-                        </div>
+<div id="page-wrapper"> <!-- start: page content -->
+	<div class="container-fluid"> <!-- start: page content container -->
+		<div class="row"> <!-- start: Page Heading -->
+			<div class="col-lg-12">
+				<h1 class="page-header">
+					Post <small>Add</small>
+				</h1>
+				<ol class="breadcrumb">
+					<li>
+						<i class="fa fa-dashboard"></i> Dashboard 
+					</li>
+					<li>
+						<i class="fa fa-list"></i> Posts
+					</li>
+					<li class="active">
+						<i class="fa fa-edit"></i> Post Add 
+					</li>
+				</ol>
+			</div>
+		</div> <!-- end: Page Heading -->
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Content Editor</h3>
+					</div> <!-- end: panel heading -->
 					<div class="panel-body">
-						<form class="form form-vertical" id="formPageAdd" method="post" ckeditor="true" action="<?= current_url();?>">
-						<hr/>
-							<h4>Indonesia</h4>
-							<div class="control-group">
-								<label>Title</label>
-								<div class="controls">
-									<input type="text"  name="title" value="" class="form-control" placeholder="Title">
+						<form id="formPageEdit" role="form" ckeditor="true" method="post" action="<?= current_url();?>">
+						<input type="submit" style="display:none">
+							<h4>Bahasa:</h4>
+							<hr />
+							<div class="form-group">
+								<label>Judul:</label>
+								<input class="form-control" name="title" required  />
+							</div>
+							<div class="form-group">
+								<label>Url:</label>
+								<div class="input-group">
+									<div class="input-group-addon"><?= base_url();?></div><input class="form-control" name="url"  />
 								</div>
 							</div>
-							<div class="control-group">
-								<label>Url</label>
-								<div class="controls">
-									<input type="text"  name="url" value="" class="form-control" placeholder="Title">
-								</div>
+							<div class="form-group">
+								<label>Status:</label>
+									<input name="status" type="checkbox" value="1" checked />
 							</div>
-							<div class="control-group">
-								<label>excerpt</label>
-								<div class="controls">
-									<textarea name="excerpt"  id="excerpt" class="form-control"></textarea>	
-								</div>
-							</div>
-							<div class="control-group">
-								<label>content</label>
-								<div class="controls">
-									<textarea name="content"  id="editor" class="form-control"></textarea>	
-								</div>
-							</div>
-							<div class="control-group">
-								<label>Meta Key</label>
-								<div class="controls">
-									<textarea name="meta_key"  class="form-control"></textarea>	
-								</div>
-							</div>
-							<div class="control-group">
-								<label>Meta Description</label>
-								<div class="controls">
-									<textarea name="meta_desc"  class="form-control"></textarea>	
-								</div>
-							</div>
-							<div class="control-group">
-								<label>Template</label>
-								<div class="controls">
+							<div class="form-group">
+								<label>Template:</label>
+								<label class="select-inline">
 									<? if($templates){?>
 									<select class="form-control" name="template">
 										<? foreach($templates as $templateRow){?>
@@ -72,65 +55,54 @@
 										<? }?>
 									</select>
 									<? }?>
-								</div>
+								</label>
 							</div>
-                                <hr/>
-                                <h4>English</h4>
-							<div class="control-group">
-								<label>Title</label>
-								<div class="controls">
-									<input type="text"  name="title_en" value="" class="form-control" placeholder="Title">
-								</div>
+							<div class="form-group">
+								<label>Isi:</label>
+								<textarea id="content" name="content" class="form-control" rows="4"></textarea>
 							</div>
-							<div class="control-group">
-								<label>excerpt</label>
-								<div class="controls">
-									<textarea name="excerpt_en"  id="excerpt-en" class="form-control"></textarea>	
-								</div>
+							<div class="form-group">
+								<label>Meta Key:</label>
+								<textarea name="meta_key" class="form-control" rows="4"></textarea>
 							</div>
-							<div class="control-group">
-								<label>content</label>
-								<div class="controls">
-									<textarea name="content_en"  id="editor-en" class="form-control"></textarea>	
-								</div>
+							<div class="form-group">
+								<label>Meta Description:</label>
+								<textarea name="meta_desc" class="form-control" rows="4"></textarea>
 							</div>
-							<div class="control-group">
-								<label>Meta Key</label>
-								<div class="controls">
-									<textarea name="meta_key_en"  class="form-control"></textarea>	
-								</div>
+							<div class="form-group">
+								<input class="btn btn-success" type="submit" value="Save" />
 							</div>
-							<div class="control-group">
-								<label>Meta Description</label>
-								<div class="controls">
-									<textarea name="meta_desc_en"  class="form-control"></textarea>	
-								</div>
+							<h4>English:</h4>
+							<hr />
+							<div class="form-group">
+								<label>Judul:</label>
+								<input class="form-control" name="title_en" required  />
 							</div>
-                                
-                                <div class="control-group">
-                                    <label></label>
-                                    <div class="controls">
-								<input type="hidden" name="catid" value="<?= $category->id;?>">
-                                        <button type="submit" class="btn btn-primary">
-                                            Post
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!--/panel content-->
-                    </div>
-                  
+							<div class="form-group">
+								<label>Isi:</label>
+								<textarea id="content-en" name="content_en" class="form-control" rows="4"></textarea>
+							</div>
+							<div class="form-group">
+								<label>Meta Key:</label>
+								<textarea name="meta_key_en" class="form-control" rows="4"></textarea>
+							</div>
+							<div class="form-group">
+								<label>Meta Description:</label>
+								<textarea name="meta_desc_en" class="form-control" rows="4"></textarea>
+							</div>
+							<div class="form-group">
+								<input class="btn btn-success" type="submit" value="Save" />
+							</div>
+						</form>
+					</div> <!-- end: panel body -->
+				</div> <!-- end: panel -->
+			</div>
 		</div>
-		
-	</div>
-</div>
+	</div> <!-- end: page content container --> 
+	
 <script>
-CKEDITOR.replace( 'excerpt' );
-CKEDITOR.replace( 'excerpt-en' );
-CKEDITOR.replace( 'editor' );
-CKEDITOR.replace( 'editor-en' );
-formGeneral('#formPageAdd');
+CKEDITOR.replace( 'content' );
+CKEDITOR.replace( 'content-en' );
+formGeneral('#formPageEdit');
 </script>
-
 <? $this->load->view(tpldir('admin/footer_view'));?>

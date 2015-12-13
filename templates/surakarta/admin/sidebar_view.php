@@ -11,7 +11,7 @@
 				<a href="<?= base_url('admin/blog');?>"><i class="fa fa-fw fa-newspaper-o"></i> Post</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-fw fa-folder-o"></i> Assets</a>
+				<a href="<?= base_url('admin/asset');?>"><i class="fa fa-fw fa-folder-o"></i> Assets</a>
 			</li>
 			<li>
 				<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Modules <i class="fa fa-fw fa-caret-down"></i></a>

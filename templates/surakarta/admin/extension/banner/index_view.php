@@ -27,18 +27,16 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>01</td>
-										<td>http://imgurl.com/img1.jpg</td>
-										<td>Active</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>01</td>
-										<td>http://imgurl.com/img1.jpg</td>
-										<td>Active</td>
-										<td></td>
-									</tr>
+									<? foreach($banner as $bannerRow){?>
+										<tr>
+											<td><?= $bannerRow->id;?></td>
+											<td><?= $bannerRow->url;?></td>
+											<td><? if($bannerRow->status){echo "Active";}else{echo "Inactive";};?></td>
+											<td>
+											<a href="<?= base_url('admin/banner/edit/'.$bannerRow->id);?>">Edit</a>
+											</td>
+										</tr>	
+									<? }?>
 								</tbody>
 							</table>
 						</div>
@@ -61,18 +59,17 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>01</td>
-										<td>http://imgurl.com/img1.jpg</td>
-										<td>Active</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>01</td>
-										<td>http://imgurl.com/img1.jpg</td>
-										<td>Active</td>
-										<td></td>
-									</tr>
+									<? foreach($side as $bannerRow){?>
+										<tr>
+											<td><?= $bannerRow->id;?></td>
+											<td><?= $bannerRow->url;?></td>
+											<td><? if($bannerRow->status){echo "Active";}else{echo "Inactive";};?></td>
+											<td>
+											<a href="<?= base_url('admin/banner/edit/'.$bannerRow->id);?>">Edit</a>
+											</td>
+										</tr>	
+									<? }?>
+									
 								</tbody>
 							</table>
 						</div>

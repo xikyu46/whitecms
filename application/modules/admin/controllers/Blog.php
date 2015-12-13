@@ -39,15 +39,8 @@ Class Blog extends ADMIN_Controller{
 	
 	function add($category=false){
 		if(empty($_POST)){
-			$category = db_read('category',array('id' => $category,'type' => 'blog'));
-			if(!$category){
-				redirect('admin/category/add');
-			}
 			$resultTemplate = $this->mod_template->get();
-			$view['category'] = $category;
-			$view['categories'] = db_reads('category',array('type' => 'blog'));
 			$view['templates'] = $resultTemplate['resultData'];
-			$view['blogs'] = db_reads('page');
 			$this->load->view(tpldir('admin/blog/add_view'),$view);
 		}else{
 			$result = jsonSrc();

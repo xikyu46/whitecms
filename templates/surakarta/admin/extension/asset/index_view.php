@@ -5,7 +5,7 @@
 		<div class="row"> <!-- start: Page Heading -->
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					SlideBanner <small>Management</small>
+					Asset Management
 				</h1>
 			</div>
 		</div> <!-- end: Page Heading -->
@@ -13,31 +13,25 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Slide Banner</h3>
+						<h3 class="panel-title">Parent Dir</h3>
 					</div> <!-- end: panel heading -->
 					<div class="panel-body">
 						<div class="table-responsive">
-							<table class="table table-bordered table-hover table-striped">
+							<table class="table  table-hover ">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>IMG Url</th>
-										<th>Text</th>
-										<th>Status</th>
-										<th>Action</th>
+										<th>#</th>
+										<th>Name</th>
 									</tr>
 								</thead>
 								<tbody>
-									<? foreach($slidebanner as $bannerRow){?>
-										<tr>
-											<td><?= $bannerRow->id;?></td>
-											<td><?= $bannerRow->url;?></td>
-											<td><?= $bannerRow->text;?></td>
-											<td><? if($bannerRow->status){echo "Active";}else{echo "Inactive";};?></td>
-											<td>
-											<a href="<?= base_url('admin/slidebanner/edit/'.$bannerRow->id);?>">Edit</a>
-											</td>
-										</tr>	
+									<? $index=1;?>
+									<? foreach($asset as $assetRow){?>
+									<tr>
+										<td><?= $index;?></td>
+										<td><a href="<?= base_url('admin/asset/detail/'.$assetRow->id);?>"><i class="fa fa-folder"></i>&nbsp;&nbsp;<?= $assetRow->name;?></a></td>
+									</tr>
+									<? $index++;?>
 									<? }?>
 								</tbody>
 							</table>
