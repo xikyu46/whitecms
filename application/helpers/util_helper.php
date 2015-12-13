@@ -47,6 +47,12 @@ function jsonSrc(){
 	return $result;
 }
 
+function getlang(){
+	$CI =& get_instance();
+	$lang = ($CI->session->userdata('lang')) ? $CI->session->userdata('lang') : '';
+	return $lang;
+}
+
 
 
 

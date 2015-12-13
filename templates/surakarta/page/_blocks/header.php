@@ -38,8 +38,8 @@
 			</div>
 			<div class="col-md-4 col-sm-5">
 				<ul class="list-inline pull-right">
-					<li><a href="#">ENGLISH</a></li>
-					<li class="active"><a href="#">INDONESIA</a></li>
+					<li class="<? if(getlang() == 'en'){ echo "active";}?>"><a href="<?= base_url('page/lang?lang=en');?>">ENGLISH</a></li>
+					<li class="<? if(getlang() != 'en'){ echo "active";}?>"><a href="<?= base_url('page/lang?lang=id');?>">INDONESIA</a></li>
 				</ul>
 			</div>
 		</div>

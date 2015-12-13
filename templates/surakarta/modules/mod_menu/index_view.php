@@ -1,12 +1,13 @@
+<? $lang_sess = (getlang()) ? '_'.getlang() : ''?> 
 <? if($menu){?>
 <ul class="nav navbar-nav">
 	<? foreach($menu as $menu_row){?>
 		<? if(!$menu_row->hide){?>
 			<? if(!$menu_row->submenu){?>
 				<? if($menu_row->post_id){?>
-					<li><a href="<?= base_url($pages[$menu_row->post_id]);?>"><?= $menu_row->title;?></a></li>
+					<li><a href="<?= base_url($pages[$menu_row->post_id]);?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
 				<? }else{?>
-					<li><a href="<?= base_url($menu_row->link);?>"><?= $menu_row->title;?></a></li>
+					<li><a href="<?= base_url($menu_row->link);?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
 				<? }?>
 				
 			<? }else{?>
@@ -23,9 +24,9 @@
 						<? if(!$submenuRow->hide){?>
 							<? if(!$submenuRow->submenu){?>
 								<? if($submenuRow->post_id){?>
-									<li><a href="<?= base_url($pages[$submenuRow->post_id]);?>"><?= $submenuRow->title;?></a></li>
+									<li><a href="<?= base_url($pages[$submenuRow->post_id]);?>"><?= $submenuRow->{'title'.$lang_sess};?></a></li>
 								<? }else{?>
-									<li><a href="<?= base_url($submenuRow->link);?>"><?= $submenuRow->title;?></a></li>
+									<li><a href="<?= base_url($submenuRow->link);?>"><?= $submenuRow->{'title'.$lang_sess};?></a></li>
 								<? }?>
 							<? }else{?>
 								<li class="dropdown">
@@ -38,9 +39,9 @@
 									<? foreach($submenuRow->submenu as $subsubmenuRow){?>
 										<? if(!$subsubmenuRow->hide){?>
 											<? if($subsubmenuRow->post_id){?>
-												<li><a href="<?= base_url($pages[$subsubmenuRow->post_id]);?>"><?= $subsubmenuRow->title;?></a></li>
+												<li><a href="<?= base_url($pages[$subsubmenuRow->post_id]);?>"><?= $subsubmenuRow->{'title'.$lang_sess};?></a></li>
 											<? }else{?>
-												<li><a href="<?= base_url($subsubmenuRow->link);?>"><?= $subsubmenuRow->title;?></a></li>
+												<li><a href="<?= base_url($subsubmenuRow->link);?>"><?= $subsubmenuRow->{'title'.$lang_sess};?></a></li>
 											<? }?>
 										<? }?> 
 									<? }?>

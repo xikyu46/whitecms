@@ -7,6 +7,10 @@ Class Blog extends ADMIN_Controller{
 		$this->load->module('mod_template');
 	}
 	
+	function index(){
+		$this->load->view(tpldir('admin/blog/index_view'));
+	}
+	
 	function edit($id=false){
 		if(empty($_POST)){
 			$resultPages = db_reads('page',array('type' => 'blog'));
@@ -21,7 +25,7 @@ Class Blog extends ADMIN_Controller{
 			$view['blog'] = ($resultPage) ? $resultPage['resultData']['blog'] : $resultPages[0];
 			
 			
-			$this->load->view(tpldir('admin/blog/index_view'),$view);
+			$this->load->view(tpldir('admin/blog/list_view'),$view);
 		}else{
 			$result = jsonSrc();
 			$id = $this->input->post('id');
