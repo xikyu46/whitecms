@@ -17,10 +17,10 @@
                     <a href="<?= base_url('admin/menu/edit');?>"  >Navigation</a>
                 </li>
                 <li>
-                <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"> Post</a>
+                <a  href="<?= base_url('admin/category/edit');?>"> Post</a>
                 </li>
                 <li>
-                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"> Module</a>
+                    <a href="<?= base_url('admin/extension');?>"> Module</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

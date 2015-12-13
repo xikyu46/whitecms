@@ -10,6 +10,11 @@ $('[data-toggle=collapse]').click(function(){
 var base_url =  $("meta[name=base_url]").attr('content'); 
 
 
+function CKupdate(){
+	for ( instance in CKEDITOR.instances )
+		CKEDITOR.instances[instance].updateElement();
+}
+
 var formGeneral = function(formID,url){
 	if(formID !== undefined){
 		$(document).ready(function(){
@@ -30,6 +35,11 @@ var formGeneral = function(formID,url){
 					var form_result3 = $(formID).attr("result3");
 					var skipMessage = $(formID).attr("skipMessage");
 					var confirmation = $(formID).attr("confirm");
+					var ckeditor = $(formID).attr("ckeditor");
+					
+					if(ckeditor != undefined){
+						CKupdate();
+					}
 					
 					var options = { 
 						type : form_method,

@@ -11,9 +11,7 @@ Class Login extends MX_Controller{
 			if($admin_auth){
 				redirect('admin/dashboard');
 			}
-			$this->load->view(tpldir('admin/header_view'));
 			$this->load->view(tpldir('admin/login/index_view'));
-			$this->load->view(tpldir('admin/footer_view'));
 		}else{
 			$username = $this->input->post('username');
 			$password = hash('sha256',$this->input->post('password'));

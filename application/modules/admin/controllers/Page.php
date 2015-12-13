@@ -11,7 +11,12 @@ Class Page extends ADMIN_Controller{
 		if(empty($_POST)){
 			$resultPages = db_reads('page',array('type' => 'page'));
 			$resultPage = $this->mod_page->get($id);
+			
 			if(!$resultPages){
+				redirect(base_url('admin/page/add'));
+			}
+			
+			if($resultPage['resultCode'] != 1000){
 				redirect(base_url('admin/page/add'));
 			}
 			$resultTemplate = $this->mod_template->get();
