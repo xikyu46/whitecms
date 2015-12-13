@@ -1,26 +1,42 @@
-<div class="collapse navbar-collapse navbar-ex1-collapse">
+	<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav side-nav">
-			<li class="active">
+			<li>
 				<a href="<?= base_url('admin/dashboard');?>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
 			</li>
 			<li>
-				<a href="<?= base_url('admin/page');?>"><i class="fa fa-fw fa-bar-chart-o"></i> Pages</a>
+				<a href="<?= base_url('admin/page');?>"><i class="fa fa-fw fa-file-text"></i> Pages</a>
 			</li>
 			<li>
-				<a href="<?= base_url('admin/navigation');?>"><i class="fa fa-fw fa-bar-chart-o"></i> Navigation</a>
+				<a href="<?= base_url('admin/blog');?>"><i class="fa fa-fw fa-newspaper-o"></i> Post</a>
 			</li>
 			<li>
-				<a href="<?= base_url('admin/blog');?>"><i class="fa fa-fw fa-bar-chart-o"></i> Blog</a>
+				<a href="#"><i class="fa fa-fw fa-folder-o"></i> Assets</a>
 			</li>
 			<li>
-			<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Modules</span></a>
-			<ul>
-				<li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span > Video Management</span></a></li>
-				<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span > Banner Management</span></a></li>
-				<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span > Event Management</span></a></li>
-				<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span > Social Media</span></a></li>
-				<li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span > </span></a></li>
-			</ul> 
+				<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Modules <i class="fa fa-fw fa-caret-down"></i></a>
+				<ul id="demo" class="collapse">
+					<li>
+						<a href="<?= base_url('admin/video');?>"><i class="fa fa-fw fa-film"></i> Video Management</a>
+					</li>
+					<li>
+						<a href="<?= base_url('admin/banner');?>"><i class="fa fa-fw fa-image"></i> Banner Management</a>
+					</li>
+					<li>
+						<a href="<?= base_url('admin/slidebanner');?>"><i class="fa fa-fw fa-image"></i> Slidebanner</a>
+					</li>
+					<li>
+						<a href="<?= base_url('admin/event');?>"><i class="fa fa-fw fa-calendar"></i> Event Management</a>
+					</li>
+					<li>
+						<a href="<?= base_url('admin/sosmed');?>"><i class="fa fa-fw fa-twitter"></i> Social Media</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-fw fa-sitemap"></i> Microsite</a>
 			</li>
 		</ul>
-	</div> 
+	</div>
+</nav> 
+<!-- end: nav wrapper untuk navbar dan sidebar -->

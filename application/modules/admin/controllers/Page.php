@@ -8,7 +8,7 @@ Class Page extends ADMIN_Controller{
 	}
 	
 	function index(){
-		$view=false;
+		$view['pages'] = db_reads('page',array('type' => 'page'));
 		$this->load->view(tpldir('admin/page/index_view'),$view);
 	}
 	
@@ -29,9 +29,7 @@ Class Page extends ADMIN_Controller{
 			$view['templates'] = $resultTemplate['resultData'];
 			$view['pages'] = $resultPages;
 			$view['page'] = ($resultPage) ? $resultPage['resultData']['page'] : $resultPages[0];
-			
-			
-			$this->load->view(tpldir('admin/page/list_view'),$view);
+			$this->load->view(tpldir('admin/page/edit_view'),$view);
 		}else{
 			$result = jsonSrc();
 			$id = $this->input->post('id');
@@ -50,7 +48,6 @@ Class Page extends ADMIN_Controller{
 			$this->load->view(tpldir('admin/page/add_view'),$view);
 		}else{
 			$result = jsonSrc();
-			
 			$result = $this->mod_page->post();
 			$result['resultData']['openUrl'] = $this->agent->referrer();
 			echo json_encode($result);

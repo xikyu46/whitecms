@@ -35,7 +35,7 @@ Class Mod_page extends MX_Controller{
 		if($id){
 			$updatePage['catid'] = false;
 			$updatePage['author'] = false;
-			$updatePage['date'] = time();
+			$updatePage['update'] = time();
 			$updatePage['url'] = $this->input->post('url');
 			$updatePage['title'] = $this->input->post('title');
 			$updatePage['title_en'] = $this->input->post('title_en');
@@ -48,6 +48,7 @@ Class Mod_page extends MX_Controller{
 			$updatePage['meta_desc'] = $this->input->post('meta_desc');
 			$updatePage['meta_desc_en'] = $this->input->post('meta_desc_en');
 			$updatePage['template'] = $this->input->post('template');
+			$updatePage['status'] = $this->input->post('status');
 			db_update('page',array('id' => $id),$updatePage);
 			$result['resultCode'] = 1000;
 			$result['resultMsg'] = "Success !!";
@@ -60,8 +61,8 @@ Class Mod_page extends MX_Controller{
 			$createPage['catid'] = false;
 			$createPage['author'] = false;
 			$createPage['date'] = time();
-			$createPage['title'] = $this->input-_>post('title');
-			$createPage['url'] = $this->input-_>post('url');
+			$createPage['title'] = $this->input->post('title');
+			$createPage['url'] = $this->input->post('url');
 			$createPage['title_en'] = $this->input->post('title_en');
 			$createPage['excerpt'] = $this->input->post('excerpt');
 			$createPage['excerpt_en'] = $this->input->post('excerpt_en');

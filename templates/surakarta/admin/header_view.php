@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta charset="utf-8">
-		<meta name="base_url"  content="surakarta.tratapp.com" />
+		<meta name="base_url"  content="<?= base_url();?>" />
 		<meta name="description" content="Website Pemerintah Kota Surakarta">
 		<meta name="author" content="baratimur">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -21,6 +21,7 @@
 		<script src="<?= tplurl('admin/includes/js/jquery.form.min.js');?>"></script>
 		<script src="<?= tplurl('admin/includes/js/jquery.validate.min.js');?>"></script>
 		<script src="<?= tplurl('admin/includes/js/scripts.js');?>"></script>
+		<script src="<?= tplurl('admin/includes/js/ckeditor.js');?>"></script>
 		<title>Admin | Pemerintah Kota Surakarta</title> <!-- title dijadikan variabel di setting website -->
 	</head>
 	<body>

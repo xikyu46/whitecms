@@ -8,7 +8,8 @@ Class Blog extends ADMIN_Controller{
 	}
 	
 	function index(){
-		$this->load->view(tpldir('admin/blog/index_view'));
+		$view['blog'] = db_reads('page',array('type' => 'blog'));
+		$this->load->view(tpldir('admin/blog/index_view'),$view);
 	}
 	
 	function edit($id=false){
@@ -25,7 +26,7 @@ Class Blog extends ADMIN_Controller{
 			$view['blog'] = ($resultPage) ? $resultPage['resultData']['blog'] : $resultPages[0];
 			
 			
-			$this->load->view(tpldir('admin/blog/list_view'),$view);
+			$this->load->view(tpldir('admin/blog/edit_view'),$view);
 		}else{
 			$result = jsonSrc();
 			$id = $this->input->post('id');
