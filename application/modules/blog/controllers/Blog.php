@@ -30,6 +30,10 @@ Class Blog extends MX_Controller{
 			$video = db_read('mod_video',array('status' => 1));
 			$view['video'] = $video;
 			$this->load->view(tpldir('page/video'),$view);
+		}else{
+			$video = db_reads('mod_video',array('status' => 1));
+			$view['video'] = $video;
+			$this->load->view(tpldir('page/video-list'),$view);
 		}
 	}
 }
