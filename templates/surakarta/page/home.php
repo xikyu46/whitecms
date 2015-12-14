@@ -88,12 +88,12 @@
 			<?= view_mod('event','outclient');?>
 		</div>
 		<hr>
-		<h4 class="more"><a href="#">More Events <i class="fa fa-angle-right"></i></a></h4>
+		<h4 class="more"><a href="<?= base_url('blog/cat/event');?>">More Events <i class="fa fa-angle-right"></i></a></h4>
 	</div>
 	
 	<div class="home-maps">
   <div class="map-container">
-    <script src="https://maps.googleapis.com/maps/apijs"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASCGioUH_SgrfkGU5rkCECqeKxUCLkB20&callback=initMap"></script>
     <script>
       function initialize() {
         var mapCanvas = document.getElementById('map-canvas');

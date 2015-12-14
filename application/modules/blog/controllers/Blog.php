@@ -17,9 +17,11 @@ Class Blog extends MX_Controller{
 		$this->load->view(tpldir('page/'.$page->template),$view);
 	}
 	
-// 	function category($type=false){
-// 		if($type){
-// 			
-// 		}
-// 	}
+	function cat($type=false){
+		if($type){
+			$blogs = db_reads('page',array('type' => $type, 'status' => 1));
+			$view['blogs'] = $blogs;
+			$this->load->view(tpldir('page/post-list'),$view);
+		}
+	}
 }

@@ -13,7 +13,7 @@
 								</div>		
 							<? }?>
 						<? }?>
-						<h4 class="more"><a href="#">More News <i class="fa fa-angle-right"></i></a></h4>
+						<h4 class="more"><a href="<?= base_url('blog/cat/news');?>">More News <i class="fa fa-angle-right"></i></a></h4>
 					</div>
 				</div>
 				 
