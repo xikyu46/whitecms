@@ -7,9 +7,9 @@
 			<li>
 				<a href="<?= base_url('admin/page');?>"><i class="fa fa-fw fa-file-text"></i> Pages</a>
 			</li>
-			<li>
+			<!--<li>
 				<a href="<?= base_url('admin/blog');?>"><i class="fa fa-fw fa-newspaper-o"></i> Post</a>
-			</li>
+			</li>-->
 			<li>
 				<a href="<?= base_url('admin/asset');?>"><i class="fa fa-fw fa-folder-o"></i> Assets</a>
 			</li>

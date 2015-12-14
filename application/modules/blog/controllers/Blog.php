@@ -16,4 +16,10 @@ Class Blog extends MX_Controller{
 		$view['page'] = $page;
 		$this->load->view(tpldir('page/'.$page->template),$view);
 	}
+	
+// 	function category($type=false){
+// 		if($type){
+// 			
+// 		}
+// 	}
 }
