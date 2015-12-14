@@ -27,7 +27,7 @@ Class Blog extends MX_Controller{
 	
 	function video($id=false){
 		if($id){
-			$video = db_read('mod_video',array('status' => 1));
+			$video = db_read('mod_video',array('status' => 1,'id' => $id));
 			$view['video'] = $video;
 			$this->load->view(tpldir('page/video'),$view);
 		}else{
