@@ -24,4 +24,12 @@ Class Blog extends MX_Controller{
 			$this->load->view(tpldir('page/post-list'),$view);
 		}
 	}
+	
+	function video($id=false){
+		if($id){
+			$video = db_read('mod_video',array('status' => 1));
+			$view['video'] = $video;
+			$this->load->view(tpldir('page/video'),$view);
+		}
+	}
 }

@@ -34,6 +34,7 @@ Class Video extends ADMIN_Controller{
 			$updateBanner['url'] = $this->input->post('url');
 			$updateBanner['status'] = $this->input->post('status');
 			$updateBanner['text'] = $this->input->post('text');
+			$updateBanner['content'] = $this->input->post('content');
 			db_update('mod_video',array('id' => $id),$updateBanner);
 			$result['resultCode'] = 1000;
 			$result['resultMsg'] = "Video Updated";

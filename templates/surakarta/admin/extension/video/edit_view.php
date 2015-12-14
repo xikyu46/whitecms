@@ -30,8 +30,12 @@
 								<input name="url" class="form-control" required value="<?= $video->url;?>">
 							</div>
 							<div class="form-group">
-								<label>Text:</label>
+								<label>Title:</label>
 								<textarea name="text" class="form-control"><?= $video->text;?></textarea>
+							</div>
+							<div class="form-group">
+								<label>Isi:</label>
+								<textarea  name="content" class="form-control" rows="4"><?= $video->content;?></textarea>
 							</div>
 							<div class="form-group">
 								<label>Status:</label>
