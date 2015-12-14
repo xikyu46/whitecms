@@ -65,7 +65,7 @@
 			<div class="row">
 			<div class="col-md-2">
 				<div class="side-img">
-				<img class="img-responsive main-img" src="<?= $page->image2;?>" />
+<!-- 				<img class="img-responsive main-img" src="<?= $page->image2;?>" /> -->
 				</div>
 			</div>
 			<div class="col-md-7">

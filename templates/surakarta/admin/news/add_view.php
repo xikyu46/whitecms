@@ -49,10 +49,10 @@
 								<label>Image:</label>
 								<input class="form-control" name="image"/>
 							</div>
-							<div class="form-group">
+							<!--<div class="form-group">
 								<label>Image 2:</label>
 								<input class="form-control" name="image2" />
-							</div>
+							</div>-->
 							<div class="form-group">
 								<label>Template:</label>
 								<label class="select-inline">
