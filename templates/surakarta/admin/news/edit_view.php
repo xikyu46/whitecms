@@ -52,7 +52,11 @@
 							</div>
 							<div class="form-group">
 								<label>Image:</label>
-								<input class="form-control" name="image" required value="<?= $blog->image;?>" />
+								<input class="form-control" name="image" value="<?= $blog->image;?>" />
+							</div>
+							<div class="form-group">
+								<label>Image 2:</label>
+								<input class="form-control" name="image2" value="<?= $blog->image2;?>" />
 							</div>
 							<div class="form-group">
 								<label>Template:</label>
@@ -71,12 +75,8 @@
 								<textarea id="content" name="content" class="form-control" rows="4"><?= $blog->content;?></textarea>
 							</div>
 							<div class="form-group">
-								<label>Meta Key:</label>
-								<textarea name="meta_key" class="form-control" rows="4"><?= $blog->meta_key;?></textarea>
-							</div>
-							<div class="form-group">
-								<label>Meta Description:</label>
-								<textarea name="meta_desc" class="form-control" rows="4"><?= $blog->meta_desc;?></textarea>
+								<label>Kategori:</label>
+								<input class="form-control" name="tag" value="<?= $blog->tag;?>"/>
 							</div>
 							<div class="form-group">
 								<input class="btn btn-success" type="submit" value="Save" />
@@ -90,14 +90,6 @@
 							<div class="form-group">
 								<label>Isi:</label>
 								<textarea id="content-en" name="content_en" class="form-control" rows="4"><?= $blog->content_en;?></textarea>
-							</div>
-							<div class="form-group">
-								<label>Meta Key:</label>
-								<textarea name="meta_key_en" class="form-control" rows="4"><?= $blog->meta_key_en;?></textarea>
-							</div>
-							<div class="form-group">
-								<label>Meta Description:</label>
-								<textarea name="meta_desc_en" class="form-control" rows="4"><?= $blog->meta_desc_en;?></textarea>
 							</div>
 							<div class="form-group">
 								<input class="btn btn-success" type="submit" value="Save" />

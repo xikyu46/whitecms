@@ -47,7 +47,11 @@
 							</div>
 							<div class="form-group">
 								<label>Image:</label>
-								<input class="form-control" name="image" required  />
+								<input class="form-control" name="image"/>
+							</div>
+							<div class="form-group">
+								<label>Image 2:</label>
+								<input class="form-control" name="image2" />
 							</div>
 							<div class="form-group">
 								<label>Template:</label>
@@ -64,6 +68,10 @@
 							<div class="form-group">
 								<label>Isi:</label>
 								<textarea id="content" name="content" class="form-control" rows="4"></textarea>
+							</div>
+							<div class="form-group">
+								<label>Kategori:</label>
+								<input class="form-control" name="tag" />
 							</div>
 							<div class="form-group">
 								<input class="btn btn-success" type="submit" value="Save" />

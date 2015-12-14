@@ -48,7 +48,9 @@ Class Mod_news extends MX_Controller{
 			$updatePage['meta_desc_en'] = $this->input->post('meta_desc_en');
 			$updatePage['template'] = $this->input->post('template');
 			$updatePage['image'] = $this->input->post('image');
+			$updatePage['image2'] = $this->input->post('image2');
 			$updatePage['status'] = $this->input->post('status');
+			$updatePage['tag'] = $this->input->post('tag');
 			$updatePage['type'] = 'news'; 
 			db_update('page',array('id' => $id),$updatePage);
 			$result['resultCode'] = 1000;
@@ -76,7 +78,9 @@ Class Mod_news extends MX_Controller{
 			$createPage['meta_desc_en'] = $this->input->post('meta_desc_en');
 			$createPage['template'] = $this->input->post('template');
 			$createPage['image'] = $this->input->post('image');
+			$createPage['image2'] = $this->input->post('image2');
 			$createPage['status'] = $this->input->post('status');
+			$createPage['tag'] = $this->input->post('tag');
 			$createPage['type'] = 'news';
 			$page_id = db_create('page',$createPage);
 			
@@ -99,5 +103,21 @@ Class Mod_news extends MX_Controller{
 	function outclient(){
 		$view['news'] = db_reads('page',array('type' => 'news','status' => 1));
 		$this->load->view(tpldir('modules/mod_news/index_view'),$view);
+	}
+	
+	function related($id=false){
+		$news = db_read('page',array('id' => $id));
+		if($news){
+			$view['news'] = db_reads('page',array('type' => 'news','status' => 1,'tag' => $news->tag, 'id !=' => $news->id));
+			$this->load->view(tpldir('modules/mod_news/related_view'),$view);
+		}
+	}
+	
+	function other($id=false){
+		$news = db_read('page',array('id' => $id));
+		if($news){
+			$view['news'] = db_reads('page',array('type' => 'news','status' => 1,'tag !=' => $news->tag, 'id !=' => $news->id));
+			$this->load->view(tpldir('modules/mod_news/other_view'),$view);
+		}
 	}
 }
