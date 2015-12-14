@@ -63,13 +63,18 @@
 			
 			<div class="single-post">
 			<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-2">
+				<div class="side-img">
+<!-- 				<img class="img-responsive main-img" src="<?= $page->image2;?>" /> -->
+				</div>
+			</div>
+			<div class="col-md-7">
 				<div class="single-post-content">
 					<img class="img-responsive main-img" src="<?= $page->image;?>" />
 					<?= $page->{'content'.$lang_sess};?>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 					<div class="sidebarism">
 						<h3 class="home-title">Related News</h3>
 						<?= view_mod('news','related',$page->id);?>
