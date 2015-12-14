@@ -5,7 +5,7 @@
 					<div class="embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item" src="<?= $video[$i]->url;?>"></iframe>
 					</div>
-					<h4 class="home-post-title"><a href="<?= $video[$i]->url;?>" target="_blank"><?= $video[$i]->text;?></a></h4>
+					<h4 class="home-post-title"><a href="<?= base_url('blog/video/'.$video[$i]->id);?>" target="_blank"><?= $video[$i]->text;?></a></h4>
 					<hr>
 				</div>
 			<? }?>
