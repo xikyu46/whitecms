@@ -10,6 +10,7 @@
 		<link href="<?= tplurl('admin/includes/css/bootstrap.min.css');?>" rel="stylesheet">
 		<link href="<?= tplurl('admin/includes/css/sb-admin.css');?>" rel="stylesheet">
 		<link href="<?= tplurl('admin/includes/css/plugins/morris.css');?>" rel="stylesheet">
+		<link href="<?= tplurl('admin/includes/css/proton/style.min.css');?>" rel="stylesheet">
 		<link href="<?= tplurl('admin/includes/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet">
 		
 		<script src="<?= tplurl('admin/includes/js/jquery.js');?>"></script>
@@ -22,6 +23,7 @@
 		<script src="<?= tplurl('admin/includes/js/jquery.validate.min.js');?>"></script>
 		<script src="<?= tplurl('admin/includes/js/scripts.js');?>"></script>
 		<script src="<?= tplurl('admin/includes/js/ckeditor.js');?>"></script>
+		<script src="<?= tplurl('admin/includes/js/jstree.min.js');?>"></script>
 		<title>Admin | Pemerintah Kota Surakarta</title> <!-- title dijadikan variabel di setting website -->
 	</head>
 	<body>

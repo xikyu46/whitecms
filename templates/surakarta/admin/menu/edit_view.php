@@ -31,28 +31,28 @@
 			<div class="col-lg-7"> <!-- start: panel form -->
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Add New Menu</h3>
+						<h3 class="panel-title">Menu Editor</h3>
 					</div> <!-- end: panel heading -->
 					<div class="panel-body">
-						<form role="form" action="<?= current_url();?>" method="post">
+						<form role="form" id="formMenuEdit" action="<?= current_url();?>" method="post">
 							<div class="form-group">
 								<label>Title:</label>
-								<input class="form-control" placeholder="Title" name="title" />
+								<input class="form-control" placeholder="Title" name="title" required value="<?= $menu->title;?>" />
 							</div>
 							<div class="form-group">
 								<label>Title(en)</label>
-								<input class="form-control" placeholder="Title" name="title_en" />
+								<input class="form-control" placeholder="Title" name="title_en" required value="<?= $menu->title_en;?>"/>
 							</div>
 							<div class="form-group">
 								<label>Parent</label>
-								<input class="form-control" name="parent_id" />
+								<input class="form-control" name="parent_id" value="<?= $menu->parent_id;?>"/>
 							</div>
 							<div class="form-group">
 								<label>Relation</label>
 								<? if($page){?>
 									<select name="post_id" class="form-control">
 										<? foreach($page as $pageRow){?>
-											<option value="<?= $pageRow->id;?>"><?= $pageRow->title;?></option>
+											<option value="<?= $pageRow->id;?>" <? if($menu->post_id == $pageRow->id){echo "selected";} ?> ><?= $pageRow->title;?></option>
 										<? }?>
 									</select>
 								<? }?>
@@ -60,11 +60,13 @@
 							<div class="form-group">
 								<label>Hide</label>
 								<div class="form-control">
-									<input type="checkbox" name="hide" value="1">
+									<input type="checkbox" name="hide" value="1" <? if($menu->hide){echo "checked";}?>>
 								</div>
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-success pull-right">Add</button>
+								<input type="hidden" name="id" value="<?= $menu->id;?>">
+								<button type="submit" class="btn btn-success pull-left">Save</button>
+								<a  href="#" onclick="deleteMenu('<?= $menu->id;?>');" class="btn btn-danger pull-right">Delete</a>
 							</div>
 						</form>
 					</div> <!-- end: panel body -->
@@ -75,5 +77,29 @@
 
 <script>
 formGeneral('#formMenuEdit');
+
+function deleteMenu(id){
+	bootbox.confirm('Anda yakin akan menghapus menu ini? ',function(result){
+		if (result === null) {                                             
+			return false;                              
+		} else {
+			if(result == true){
+				$.get(base_url+'admin/menu/delete/'+id,function(data){
+					if(data.resultCode == 1000){
+						bootbox.alert(data.resultMsg,function(){
+							if(data.resultData.openUrl){
+								window.location.href=data.resultData.openUrl;
+							}
+						});
+					}else{
+						bootbox.alert(data.resultMsg);
+					}
+				},'json');
+			}
+		}
+	});
+}
+</script>
+
 </script>
 <? $this->load->view(tpldir('admin/footer_view'));?>

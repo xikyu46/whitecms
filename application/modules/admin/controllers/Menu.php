@@ -1,6 +1,10 @@
 <?php
 
 Class Menu extends ADMIN_Controller{
+	function index(){
+		$this->load->view(tpldir('admin/menu/index_view'));
+	}
+	
 	function edit($id=false){
 		if(empty($_POST)){
 			$menu = db_read('menu_item',array('id' => $id));
@@ -17,7 +21,7 @@ Class Menu extends ADMIN_Controller{
 				$view['page'] = $pageResult['resultData']['page'];
 			}
 			$view['menu'] = $menu;
-			$this->load->view(tpldir('admin/menu/index_view'),$view);
+			$this->load->view(tpldir('admin/menu/edit_view'),$view);
 		}else{
 			$result = jsonSrc();
 			$id = $this->input->post('id');
@@ -30,7 +34,13 @@ Class Menu extends ADMIN_Controller{
 	
 	function add(){
 		if(empty($_POST)){
-			$this->load->view(tpldir('admin/menu/add_view'));
+			$this->load->module('mod_page');
+			$view['page'] = false;
+			$pageResult = $this->mod_page->gets();
+			if($pageResult['resultCode'] == 1000){
+				$view['page'] = $pageResult['resultData']['page'];
+			}
+			$this->load->view(tpldir('admin/menu/add_view'),$view);
 		}else{
 			$result = jsonSrc();
 			$this->load->module('mod_menu');
