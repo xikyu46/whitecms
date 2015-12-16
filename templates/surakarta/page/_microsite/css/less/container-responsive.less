@@ -1,0 +1,229 @@
+@media (max-width: @screen-xs-max) {
+  .container.common-page{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 70px;
+    h2{
+      .input-group{
+        width: 50vw;
+      }
+      .form-inline{
+        position: static;
+        margin-top: 10px;
+        text-align: right;
+      }
+    }
+    .panel-wrapper.panel-tab{
+      display: none;
+    }
+    .collapse-mobile{
+      display: block;
+      .btn{
+        text-align: left;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .parallax-windows{
+    min-height : 250px;
+  }
+  .navbar-pemprov{
+    .site-title{
+      height: 50px;
+      min-height: 50px;
+      .navbar-header{
+        margin: 0;
+        min-height: 50px;
+        min-width: 80px;
+        height: 50px;
+        padding: 0 5px;
+        display: inline-block;
+      }
+      section{
+        display: inline-block;
+        margin-top: 8px;
+        h3{
+          font-size: 17px;
+        }
+        h4{
+          font-size: 17px;
+        }
+        .right-content{
+          display: none;
+        }
+      }
+    }
+    .navbar-header{
+      .navbar-toggle{
+        z-index: 20;
+      }
+      .navbar-brand{
+        padding: 0 5px;
+        img{
+          width: 70px;
+        }
+      }
+    }
+    .navbar-collapse{
+      .navbar-nav{
+        margin: 0 0 10px;
+        >li:first-child{
+          a{
+            padding: 10px 15px;
+          }
+        }
+        &.navbar-right{
+          .btn{
+            padding: 5px !important;
+          }
+        }
+      }
+    }
+  }
+  .parallax-content{
+    .list-inline.list-contact{
+      li{
+        display: block;
+      }
+    }
+    .news-list{
+      &:nth-child(2){
+        h3{
+          margin-top: 50px;
+        }
+      }
+    }
+    &.first-content{
+      .list-inline{
+        &.text-center{
+          li{
+            margin-top: 20vh;
+            margin-bottom: 10vh;
+            margin-right: 0;
+            min-width: 8em;
+            a{
+              .fa-5x{
+                font-size: 2em;
+              }
+            }
+          }
+        }
+      }
+      .content-foot{
+        height: 48vh;
+        padding-top: 5vh;
+        .list-inline{
+          text-align: center;
+          li.text-center{
+            min-width: 7em;
+          }
+          &.text-right{
+            margin-top: 6vh;
+          }
+        }
+      }
+    }
+    &:not(.first-content){
+      padding: 15px;
+    }
+
+  }
+  .footer.fixed-bottom{
+    .container{
+      padding-right: 15px;
+      padding-left: 15px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 441px){
+  .navbar-pemprov{
+    .navbar-header{
+      .navbar-brand{
+        img{
+          width: 60px;
+        }
+      }
+    }
+    .site-title{
+      section{
+        h3{
+          font-size: 11px;
+          margin-bottom: 19px;
+        }
+        h4{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .parallax-content{
+    &.first-content{
+      .content-foot{
+        height: 48vh;
+        padding-top: 10vh;
+        .list-inline{
+          text-align: center;
+          li.text-center{
+            min-width: 5em;
+            a{
+              .fa-2x{
+                font-size: 1.5em;
+              }
+            }
+          }
+          &.text-right{
+            margin-top: 6vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-xs-max) {
+
+  .no-more-tables{
+    border: none;
+  }
+  .no-more-tables table, 
+  .no-more-tables thead, 
+  .no-more-tables tbody, 
+  .no-more-tables th, 
+  .no-more-tables td, 
+  .no-more-tables tr { 
+    display: block; 
+  }
+ 
+  .no-more-tables thead tr { 
+    // position: absolute;
+    // top: -9999px;
+    // left: -9999px;
+    display: none;
+  }
+ 
+  .no-more-tables tr { border: 1px solid #ccc; margin-bottom: 20px; }
+ 
+  .no-more-tables td { 
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+    white-space: normal;
+    text-align: right !important;
+  }
+ 
+  .no-more-tables td:before { 
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    text-align:left;
+    font-weight: bold;
+  }
+  .no-more-tables td:before { content: attr(data-title); }
+}

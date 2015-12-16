@@ -1,0 +1,36 @@
+.quote-front { 
+	/*ini bukan variabel diubah*/
+	margin-top: 300px;
+	background-color:rgba(151, 147, 145, 0.5);
+}
+.first-background {
+	/*
+	PERUNTUKAN: backround image dari Seksi FIRST CONTENT
+	variabel: background-image saja
+	*/
+	/*background-image: url("../img/parallax_01.jpg");*/
+	background-image: url("http://www.solopolah.com/sites/default/files/banner/ICCC%202015%20Solo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.navbar-pemprov-bg {
+	/*
+	PERUNTUKAN: warna untuk navbar
+	*/
+    background-color: #FEFEFE;
+}
+.site-title-bg {
+	/*
+	PERUNTUKAN: warna untuk header
+	variabel: keduanya dibuat variabel
+	*/
+	background-color: #E57816;
+    border-color: #E57816;	
+}
+
+.footer-bg{
+	/*
+	PERUNTUKAN: warna untuk header
+	*/
+	background-color: #E57816;
+}
