@@ -40,7 +40,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-fw fa-sitemap"></i> Microsite</a>
+				<a href="<?= base_url('admin/microsite');?>"><i class="fa fa-fw fa-sitemap"></i> Microsite</a>
 			</li>
 		</ul>
 	</div>

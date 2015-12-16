@@ -60,9 +60,11 @@ Class Mod_news extends MX_Controller{
 	}
 	
 	public function post(){
+		$sess_admin_user = $this->session->userdata('admin_user');
+		session_write_close();
 		$result = jsonSrc();
 			$createPage['catid'] = $this->input->post('catid');
-			$createPage['author'] = false;
+			$createPage['author'] = $sess_admin_user;
 			$createPage['date'] = time();
 			$createPage['update'] = time();
 			$createPage['title'] = $this->input->post('title');

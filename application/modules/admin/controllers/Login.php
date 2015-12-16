@@ -22,6 +22,7 @@ Class Login extends MX_Controller{
 			}
 			$this->session->set_userdata('admin_auth',true);
 			$this->session->set_userdata('adminid',$adminRow->id);
+			$this->session->set_userdata('admin_user',$adminRow->username);
 			redirect(base_url('admin/dashboard'));
 		}
 	}

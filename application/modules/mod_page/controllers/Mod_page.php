@@ -34,7 +34,6 @@ Class Mod_page extends MX_Controller{
 		$result = jsonSrc();
 		if($id){
 			$updatePage['catid'] = false;
-			$updatePage['author'] = false;
 			$updatePage['update'] = time();
 			$updatePage['url'] = $this->input->post('url');
 			$updatePage['title'] = $this->input->post('title');
@@ -57,9 +56,11 @@ Class Mod_page extends MX_Controller{
 	}
 	
 	public function post(){
+		$sess_admin_user = $this->session->userdata('admin_user');
+		session_write_close();
 		$result = jsonSrc();
 			$createPage['catid'] = false;
-			$createPage['author'] = false;
+			$createPage['author'] = $sess_admin_user;
 			$createPage['date'] = time();
 			$createPage['title'] = $this->input->post('title');
 			$createPage['url'] = $this->input->post('url');

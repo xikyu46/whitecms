@@ -56,10 +56,11 @@ Class Mod_menu extends MX_Controller{
 		return $result;
 	}
     
-	function outadmin(){
+	function outadmin($id=false){
 		$menu = $this->get();
 		if($menu['resultCode'] == 1000){
 			$view['menu'] = $menu['resultData'];
+			$view['active'] = $id;
 			$this->load->view(tpldir('modules/mod_menu/admin_view'),$view);
 		}
 	}

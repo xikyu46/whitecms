@@ -24,7 +24,7 @@
 						</h3>
 					</div> <!-- end: panel heading -->
 					<div class="panel-body">
-						<?= view_mod('menu','outadmin');?>
+						<?= view_mod('menu','outadmin',$menu->id);?>
 					</div> <!-- end: panel body -->
 				</div> <!-- end: panel -->
 			</div> <!-- end: panel tree -->
@@ -56,6 +56,10 @@
 										<? }?>
 									</select>
 								<? }?>
+							</div>
+							<div class="form-group">
+								<label>Position</label>
+								<input class="form-control" name="position" value="<?= $menu->position;?>"/>
 							</div>
 							<div class="form-group">
 								<label>Hide</label>
