@@ -8,16 +8,17 @@
 			
 						
 							<div class="form-group">
-								<label>Background</label>
-								<input type="text" name="background"  class="form-control">
-							</div>
-							<div class="form-group">
 								<label>Menu</label>
 								<input type="text" name="menu"  class="form-control">
 							</div>
 							<div class="form-group">
+								<label>Background</label>
+								<input type="text" name="background"  class="form-control">
+							</div>
+							
+							<div class="form-group">
 								<label>Content:</label>
-								<textarea type="text" name="content"  class="form-control"></textarea>
+								<textarea type="text" id="content" name="content"  class="form-control"></textarea>
 							</div>
 			<input type="hidden" name="mid" value="<?= $mid;?>">
 			<input type="submit" class="btn btn-success pull-right" value="Submit" role="button">
@@ -29,5 +30,6 @@
 	
  </div>
  <script>
+  CKEDITOR.replace( 'content' );
  formGeneral('#formContentAdd');
  </script>

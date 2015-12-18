@@ -16,8 +16,8 @@ Class Microsite extends ADMIN_Controller{
 			$result = jsonSrc();
 			$insert['menu'] = $this->input->post('template_title');
 			$insert['menu'] = $this->input->post('template_title');
-			$insert['anchor'] = preg_replace('/[^a-zA-Z0-9]/','',$this->input->post('template_title'));
 			$insert['status'] = $this->input->post('status');
+			$insert['url'] = $this->input->post('url');
 			$mid = db_create('mod_microsite',$insert);
 			if(!$mid){
 				$result['resultMsg'] = "create section failed";
@@ -31,6 +31,7 @@ Class Microsite extends ADMIN_Controller{
 			$insertTemplate['slogan'] = $this->input->post('template_slogan');
 			$insertTemplate['navbar'] = $this->input->post('template_navbar');
 			$insertTemplate['header'] = $this->input->post('template_header');
+			$insertTemplate['header_border'] = $this->input->post('template_header_border');
 			$insertTemplate['footer'] = $this->input->post('template_footer');
 			db_create('mod_microsite_template',$insertTemplate);
 			
@@ -72,8 +73,8 @@ Class Microsite extends ADMIN_Controller{
 			$result = jsonSrc();
 			$insert['menu'] = $this->input->post('template_title');
 			$insert['title'] = $this->input->post('template_title');
-			$insert['anchor'] = preg_replace('/[^a-zA-Z0-9]/','',$this->input->post('template_title'));
 			$insert['status'] = $this->input->post('status');
+			$insert['url'] = $this->input->post('url');
 			$mid = db_update('mod_microsite',array('id' => $id),$insert);
 			if(!$mid){
 				$result['resultMsg'] = "create section failed";
@@ -87,6 +88,7 @@ Class Microsite extends ADMIN_Controller{
 			$insertTemplate['slogan'] = $this->input->post('template_slogan');
 			$insertTemplate['navbar'] = $this->input->post('template_navbar');
 			$insertTemplate['header'] = $this->input->post('template_header');
+			$insertTemplate['header_border'] = $this->input->post('template_header_border');
 			$insertTemplate['footer'] = $this->input->post('template_footer');
 			db_update('mod_microsite_template',array('mid' => $id),$insertTemplate);
 			
@@ -120,6 +122,7 @@ Class Microsite extends ADMIN_Controller{
 			$insertContent['mid'] = $this->input->post('mid');
 			$insertContent['background'] = $this->input->post('background');
 			$insertContent['menu'] = $this->input->post('menu');
+			$insertContent['anchor'] = preg_replace('/[^a-zA-Z0-9]/','',$this->input->post('menu'));
 			$insertContent['content'] = $this->input->post('content');
 			db_create('mod_microsite_content',$insertContent);
 			
@@ -143,6 +146,7 @@ Class Microsite extends ADMIN_Controller{
 			$id = $this->input->post('id');
 			$insertContent['background'] = $this->input->post('background');
 			$insertContent['menu'] = $this->input->post('menu');
+			$insertContent['anchor'] = preg_replace('/[^a-zA-Z0-9]/','',$this->input->post('menu'));
 			$insertContent['content'] = $this->input->post('content');
 			
 			db_update('mod_microsite_content',array('id' => $id),$insertContent);

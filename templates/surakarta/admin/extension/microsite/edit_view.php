@@ -44,7 +44,10 @@
 								<label>Slogan:</label>
 								<input type="text" name="template_slogan" required class="form-control" value="<?= $template->slogan;?>">
 							</div>
-							
+							<div class="form-group">
+								<label>Url:</label>
+								<input type="text" name="url" required class="form-control"  value="<?= $microsite->url;?>">
+							</div>
 							<div class="form-group">
 								<label>Warna Navbar:</label>
 								<div class="input-group colorpicker" >
@@ -52,9 +55,15 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Warna Header:</label>
+								<label>Warna Header Background:</label>
 								<div class="input-group colorpicker">
 								<input type="text" name="template_header"  class="form-control" value="<?= $template->header;?>"><span class="input-group-addon"><i></i></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Warna Header Border:</label>
+								<div class="input-group colorpicker">
+								<input type="text" name="template_header_border"  class="form-control" value="<?= $template->header_border;?>"><span class="input-group-addon"><i></i></span>
 								</div>
 							</div>
 							<div class="form-group">
@@ -86,33 +95,33 @@
 							</div>
 							<div class="form-group">
 								<label>Twitter:</label>
-								<input type="text" name="contact_twitter"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_twitter"  class="form-control" value="<?= $contact->twitter;?>">
 							</div>
 							<div class="form-group">
 								<label>Instagram :</label>
-								<input type="text" name="contact_instagram"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_instagram"  class="form-control" value="<?= $contact->instagram;?>">
 							</div>
 							<div class="form-group">
 								<label>Google Plus:</label>
-								<input type="text" name="contact_googleplus"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_googleplus"  class="form-control" value="<?= $contact->googleplus;?>">
 							</div>
 							
 							<div class="form-group">
 								<label>Contact Image:</label>
-								<input type="text" name="contact_image"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_image"  class="form-control" value="<?= $contact->contact;?>">
 							</div>
 							<div class="form-group">
 								<label>Phone:</label>
-								<input type="text" name="contact_phone"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_phone"  class="form-control" value="<?= $contact->phone;?>">
 							</div>
 							
 							<div class="form-group">
 								<label>Email:</label>
-								<input type="text" name="contact_email"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_email"  class="form-control" value="<?= $contact->email;?>">
 							</div>
 							<div class="form-group">
 								<label>Address:</label>
-								<textarea type="text" name="contact_address"  class="form-control"><?= $contact->facebook;?>"</textarea>
+								<textarea type="text" name="contact_address"  class="form-control"><?= $contact->address;?></textarea>
 							</div>
 						
 					</div> <!-- end: panel body -->

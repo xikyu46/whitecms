@@ -30,12 +30,14 @@
 <!-- header -->
 		<div id="wrapper"> <!-- start: main wrapper -->
 
-		<div id="defaultModal" data-backdrop="static" data-keyboard="false" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" >
-		<div class="modal-dialog">
-		<div class="modal-content" id="defaultModalContent">
+		
+		<div id="defaultModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content" id="defaultModalContent">
+					...
+				</div>
+			</div>
 		</div>
-		</div>
-</div>
 <script>
 function showModal(url , post){
 	$.post(url,post,function(data){

@@ -44,7 +44,10 @@
 								<label>Slogan:</label>
 								<input type="text" name="template_slogan" required class="form-control">
 							</div>
-							
+							<div class="form-group">
+								<label>Url:</label>
+								<input type="text" name="url" required class="form-control">
+							</div>
 							<div class="form-group">
 								<label>Warna Navbar:</label>
 								<div class="input-group colorpicker">
@@ -55,6 +58,12 @@
 								<label>Warna Header:</label>
 								<div class="input-group colorpicker">
 								<input type="text" name="template_header"  class="form-control"><span class="input-group-addon"><i></i></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Warna Header Border:</label>
+								<div class="input-group colorpicker">
+								<input type="text" name="template_header_border"  class="form-control" ><span class="input-group-addon"><i></i></span>
 								</div>
 							</div>
 							<div class="form-group">
