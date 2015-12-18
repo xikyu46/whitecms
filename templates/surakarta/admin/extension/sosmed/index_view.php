@@ -5,7 +5,7 @@
 		<div class="row"> <!-- start: Page Heading -->
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Microsite <small>Content Management</small>
+					Social Media <small>Content Management</small>
 				</h1>
 			</div>
 		</div> <!-- end: Page Heading -->
@@ -13,7 +13,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Microsite</h3>
+						<h3 class="panel-title">Social Media</h3>
 					</div> <!-- end: panel heading -->
 					<div class="panel-body">
 						<div class="table-responsive">
@@ -21,29 +21,27 @@
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>Menu</th>
+										<th>Social Media</th>
+										<th>Url</th>
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<? if($microsite){?>
-									<? foreach($microsite as $micrositeRow){?>
+									<? foreach($sosmed as $sosmedRow){?>
 										<tr>
-											<td><?= $micrositeRow->id;?></td>
-											<td><?= $micrositeRow->menu;?></td>
-											<td><? if($micrositeRow->status){echo "Active";}else{echo "Inactive";};?></td>
+											<td><?= $sosmedRow->id;?></td>
+											<td><?= $sosmedRow->name;?></td>
+											<td><?= $sosmedRow->url;?></td>
+											<td><? if($sosmedRow->status){echo "Active";}else{echo "Inactive";};?></td>
 											<td>
-												<a href="<?= base_url('admin/microsite/edit/'.$micrositeRow->id);?>">Edit</a> |
-												<a href="<?= base_url('admin/microsite/delete/'.$micrositeRow->id);?>">Delete</a>
+												<a href="<?= base_url('admin/sosmed/edit/'.$sosmedRow->id);?>">Edit</a>
 											</td>
 										</tr>	
-									<? }?>
 									<? }?>
 								</tbody>
 							</table>
 						</div>
-							<a class="btn btn-success pull-right" href="<?= base_url('admin/microsite/add');?>" role="button"><i class="fa fa-plus"></i> New Section</a>
 					</div> <!-- end: panel body -->
 				</div> <!-- end: panel -->
 			</div>

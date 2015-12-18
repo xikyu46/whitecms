@@ -30,43 +30,43 @@
 						
 							<div class="form-group">
 								<label>Title:</label>
-								<input type="text" name="template_title" required class="form-control" value="<?= $template->title;?>">
+								<input type="text" name="template_title" required class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Logo:</label>
-								<input type="text" name="template_logo" required class="form-control" value="<?= $template->logo;?>">
+								<input type="text" name="template_logo" required class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Judul Website :</label>
-								<input type="text" name="template_judul" required class="form-control" value="<?= $template->judul;?>">
+								<input type="text" name="template_judul" required class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Slogan:</label>
-								<input type="text" name="template_slogan" required class="form-control" value="<?= $template->slogan;?>">
+								<input type="text" name="template_slogan" required class="form-control">
 							</div>
 							
 							<div class="form-group">
 								<label>Warna Navbar:</label>
-								<div class="input-group colorpicker" >
-								<input type="text" name="template_navbar" class="form-control" value="<?= $template->navbar;?>"><span class="input-group-addon"><i></i></span>
+								<div class="input-group colorpicker">
+								<input type="text" name="template_navbar"  class="form-control"><span class="input-group-addon"><i></i></span>
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Warna Header:</label>
 								<div class="input-group colorpicker">
-								<input type="text" name="template_header"  class="form-control" value="<?= $template->header;?>"><span class="input-group-addon"><i></i></span>
+								<input type="text" name="template_header"  class="form-control"><span class="input-group-addon"><i></i></span>
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Warna Footer:</label>
 								<div class="input-group colorpicker">
-								<input type="text" name="template_footer"  class="form-control" value="<?= $template->footer;?>"><span class="input-group-addon"><i></i></span>
+								<input type="text" name="template_footer"  class="form-control"><span class="input-group-addon"><i></i></span>
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Status:</label>
 								<label class="checkbox-inline">
-									<input name="status" value="1" <? if($microsite->status){echo "checked";}?> type="checkbox" > active
+									<input name="status" value="1" type="checkbox" > active
 								</label>
 							</div>
 					</div> <!-- end: panel body -->
@@ -82,37 +82,37 @@
 						
 							<div class="form-group">
 								<label>Facebook:</label>
-								<input type="text" name="contact_facebook"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_facebook"  class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Twitter:</label>
-								<input type="text" name="contact_twitter"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_twitter"  class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Instagram :</label>
-								<input type="text" name="contact_instagram"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_instagram"  class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Google Plus:</label>
-								<input type="text" name="contact_googleplus"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_googleplus"  class="form-control">
 							</div>
 							
 							<div class="form-group">
 								<label>Contact Image:</label>
-								<input type="text" name="contact_image"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_image"  class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Phone:</label>
-								<input type="text" name="contact_phone"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_phone"  class="form-control">
 							</div>
 							
 							<div class="form-group">
 								<label>Email:</label>
-								<input type="text" name="contact_email"  class="form-control" value="<?= $contact->facebook;?>">
+								<input type="text" name="contact_email"  class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Address:</label>
-								<textarea type="text" name="contact_address"  class="form-control"><?= $contact->facebook;?>"</textarea>
+								<textarea type="text" name="contact_address"  class="form-control"></textarea>
 							</div>
 						
 					</div> <!-- end: panel body -->
@@ -136,31 +136,18 @@
 									</tr>
 								</thead>
 								<tbody>
-									<? if($content){?>
-										<? $index=0;?>
-										<? foreach($content as $row){?>
-											<tr>
-												<td><?= $row->id;?></td>
-												<td><?= $row->menu;?></td>
-												<td><?= $row->status;?></td>
-												<td>
-													<a href="#" onclick="showModal('<?= base_url('admin/microsite/contentedit/'.$row->id);?>');">Edit</a>
-													<? if($index){?>
-														<a href="#" onclick="deletePage('<?= $row->id;?>');">Delete</a>
-													<? }?>
-												</td>
-											</tr>
-										<? $index++;?>
-										<? }?>
-									<? }?>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
 								</tbody>
 							</table>
-							<a href="#" onclick="showModal('<?= base_url('admin/microsite/contentadd/'.$contact->mid);?>');">New Content</a>
 						</div>
 					</div> <!-- end: panel body -->
 				</div> <!-- end: panel -->
 			</div>
-			
 			
 			<input type="submit" class="btn btn-success pull-right" value="Submit" role="button">
 		</form>
@@ -171,26 +158,5 @@ formGeneral('#formNwsEdit');
 $(function(){
 	$('.colorpicker').colorpicker();
 });
-function deletePage(id){
-	bootbox.confirm('Anda yakin akan menghapus content ini? ',function(result){
-		if (result === null) {                                             
-			return false;                              
-		} else {
-			if(result == true){
-				$.get(base_url+'admin/microsite/contentdelete/'+id,function(data){
-					if(data.resultCode == 1000){
-						bootbox.alert(data.resultMsg,function(){
-							if(data.resultData.openUrl){
-								window.location.href=data.resultData.openUrl;
-							}
-						});
-					}else{
-						bootbox.alert(data.resultMsg);
-					}
-				},'json');
-			}
-		}
-	});
-}
 </script>
 <? $this->load->view(tpldir('admin/footer_view'));?>

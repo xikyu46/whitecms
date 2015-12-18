@@ -5,56 +5,7 @@
 
 			<div class="row">
 				<div class="col-md-5">
-					<ul class="list-inline">
-						<li>
-							<a href="#">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-								</span>
-							</a>
-						</li>
-					</ul>
+					<?= view_mod('sosmed','outclient');?>
 				</div>
 				<div class="col-md-7">
 					<div class="row">
