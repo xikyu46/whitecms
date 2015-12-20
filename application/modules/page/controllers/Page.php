@@ -32,4 +32,18 @@ Class Page extends MX_Controller{
 			$this->load->view(tpldir('page/'.$page->template),$view);
 		}
 	}
+	
+	function search($key=false){
+		$this->load->model('Search_model');
+		$this->load->model('Encryption_model');
+		if($this->input->get('key')){
+			$key = $this->Encryption_model->encrypt($this->input->get('key'));
+			redirect(base_url('page/search/'.$key));
+		}
+		
+		$search = $this->Encryption_model->decrypt($key);
+		$view['search'] = $this->Search_model->reads($search);
+		$view['search_count'] = $this->Search_model->reads($search,true);
+		$this->load->view(tpldir('page/search'),$view);
+	}
 }

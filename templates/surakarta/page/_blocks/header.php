@@ -56,9 +56,9 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 			<?= view_mod('menu','outclient');?>
-			<form class="navbar-form navbar-right" role="search">
+			<form class="navbar-form navbar-right" role="search" action="<?= base_url('page/search');?>">
 				<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search">
+				<input type="text" name="key" class="form-control" placeholder="Search">
 				</div>
 				<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 			</form>

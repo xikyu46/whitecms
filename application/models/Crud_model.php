@@ -6,25 +6,43 @@ Class Crud_model extends CI_Model{
 		return $this->where($table,$where);
 	}
 	
+	function count_db_read($table=false, $where=false){
+		$_GET['model_multi'] = false;
+		return $this->where($table,$where,true);
+	}
+	
 	function reads($table=false,$where=false){
 		$_GET['model_multi'] = true;
 		return $this->where($table,$where);
 	}
 	
-	function where($table=false,$where=false){
+	function count_db_reads($table=false, $where=false){
+		$_GET['model_multi'] = true;
+		return $this->where($table,$where,true);
+	}
+	
+	
+	function where($table=false,$where=false,$count=false){
 		if($table){
+			$limit = $this->config->item('limit_page');
+			$offset = $this->input->get('offset');
+			$offset = ($offset > 0) ? $offset : 0;
 			if(is_array($where)){
 				foreach($where as $key => $row){
 					$this->db->where($key,$row);
 				}
 			}
-			$query = $this->db->get($table);
-			if($query){
-				if($query->num_rows() > 0){
-					if($this->input->get('model_multi')){
-						return $query->result();
-					}else{
-						return $query->row();
+			if($count){
+				return $this->db->count_all_results();
+			}else{
+				$query = $this->db->get($table,$limit,$offset);
+				if($query){
+					if($query->num_rows() > 0){
+						if($this->input->get('model_multi')){
+							return $query->result();
+						}else{
+							return $query->row();
+						}
 					}
 				}
 			}
