@@ -33,12 +33,12 @@
 							<hr />
 							<div class="form-group">
 								<label>Judul:</label>
-								<input class="form-control" name="title" required  />
+								<input id="title" class="form-control" name="title" required  />
 							</div>
 							<div class="form-group">
 								<label>Url:</label>
 								<div class="input-group">
-									<div class="input-group-addon"><?= base_url();?></div><input class="form-control" name="url"  />
+									<div class="input-group-addon"><?= base_url();?></div><input id="url" class="form-control" name="url"  />
 								</div>
 							</div>
 							<div class="form-group">
@@ -101,6 +101,12 @@
 	</div> <!-- end: page content container --> 
 	
 <script>
+$("#title").keyup(function() {
+	var newValue = this.value.toLowerCase();
+	var newValueReplace = newValue.replace(/[^a-z0-9\ ]/g,"");
+	var newValueReplace2 = newValue.replace(/[\ ]/g,"-");
+    $('#url').val(newValueReplace2);
+});
 CKEDITOR.replace( 'content' );
 CKEDITOR.replace( 'content-en' );
 formGeneral('#formPageEdit');
