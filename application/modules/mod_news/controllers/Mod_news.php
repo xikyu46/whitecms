@@ -68,7 +68,11 @@ Class Mod_news extends MX_Controller{
 			$createPage['date'] = time();
 			$createPage['update'] = time();
 			$createPage['title'] = $this->input->post('title');
-			$createPage['url'] = $this->input->post('url');
+			if($this->input->post('url')){
+				$createPage['url'] = $this->input->post('url');
+			}else{
+				$createPage['url'] = preg_replace('[\ ]','-',preg_replace('[^a-z0-9\ ]','',strtolower($this->input->post('title'))));
+			}
 			$createPage['title_en'] = $this->input->post('title_en');
 			$createPage['excerpt'] = $this->input->post('excerpt');
 			$createPage['excerpt_en'] = $this->input->post('excerpt_en');
