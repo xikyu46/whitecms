@@ -38,7 +38,7 @@
 							<div class="form-group">
 								<label>Url:</label>
 								<div class="input-group">
-									<div class="input-group-addon"><?= base_url('blog');?></div><input class="form-control" name="url"  />
+									<div class="input-group-addon"><?= base_url('news');?>/</div><input class="form-control" name="url"  />
 								</div>
 							</div>
 							<div class="form-group">
