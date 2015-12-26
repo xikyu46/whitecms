@@ -8,7 +8,21 @@ Class News extends ADMIN_Controller{
 	}
 	
 	function index(){
-		$view['news'] = db_reads('page',array('type' => 'news'));
+		$where = array();
+		$where['type'] = 'news';
+		if($this->input->get('title')){
+			$where['title'] = '%'.$this->input->get('title');
+		}
+		$order=false;
+		if($this->input->get('filter')){
+			if($this->input->get('filter') == 'oldest'){
+				$order['date'] = 'asc';
+			}elseif($this->input->get('filter') == 'latest'){
+				$order['date'] = 'desc';
+			}
+		}
+		$view['news'] = db_reads('page',$where,$order);
+		$view['count_news'] = count_db_reads('page',$where);
 		$this->load->view(tpldir('admin/news/index_view'),$view);
 	}
 	

@@ -1,9 +1,9 @@
 <?php
 
 Class Crud_model extends CI_Model{
-	function read($table=false,$where=false){
+	function read($table=false,$where=false,$order=false){
 		$_GET['model_multi'] = false;
-		return $this->where($table,$where);
+		return $this->where($table,$where,false,$order);
 	}
 	
 	function count_db_read($table=false, $where=false){
@@ -11,9 +11,9 @@ Class Crud_model extends CI_Model{
 		return $this->where($table,$where,true);
 	}
 	
-	function reads($table=false,$where=false){
+	function reads($table=false,$where=false,$order=false){
 		$_GET['model_multi'] = true;
-		return $this->where($table,$where);
+		return $this->where($table,$where,false,$order);
 	}
 	
 	function count_db_reads($table=false, $where=false){
@@ -22,17 +22,27 @@ Class Crud_model extends CI_Model{
 	}
 	
 	
-	function where($table=false,$where=false,$count=false){
+	function where($table=false,$where=false,$count=false,$order=false){
 		if($table){
 			$limit = $this->config->item('limit_page');
 			$offset = $this->input->get('offset');
 			$offset = ($offset > 0) ? $offset : 0;
 			if(is_array($where)){
 				foreach($where as $key => $row){
-					$this->db->where($key,$row);
+					if(preg_match('/\%/',$row)){
+						$this->db->like($key,preg_replace('/%/','',$row));
+					}else{
+						$this->db->where($key,$row);
+					}
+				}
+			}
+			if(is_array($order)){
+				foreach($order as $key => $row){
+					$this->db->order_by($key,$row);
 				}
 			}
 			if($count){
+				$this->db->from($table);
 				return $this->db->count_all_results();
 			}else{
 				$query = $this->db->get($table,$limit,$offset);

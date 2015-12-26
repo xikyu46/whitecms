@@ -9,6 +9,7 @@ Class Page extends ADMIN_Controller{
 	
 	function index(){
 		$view['pages'] = db_reads('page',array('type' => 'page'));
+		$view['count_pages'] = count_db_reads('page',array('type' => 'page'));
 		$this->load->view(tpldir('admin/page/index_view'),$view);
 	}
 	

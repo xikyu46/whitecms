@@ -84,7 +84,7 @@
 							<? }?>
 							<nav> <!-- start: pagination -->
 								<ul class="pagination">
-									<?= showpage(current_url(),20);?>
+									<?= showpage(current_url(),$count_pages);?>
 								</ul>
 							</nav><!-- end: pagination -->
 						</div>

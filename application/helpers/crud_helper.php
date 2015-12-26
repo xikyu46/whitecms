@@ -7,16 +7,29 @@ function db_create($table=false,$data=false){
 }
 
 //READ
-function db_read($table=false,$where=false){
+function db_read($table=false,$where=false,$order=false){
 	$CI =& get_instance();
-	return $CI->Crud_model->read($table,$where);
+	return $CI->Crud_model->read($table,$where,$order);
 }
 
-//READS
-function db_reads($table=false,$where=false){
+
+function count_db_read($table=false,$where=false){
 	$CI =& get_instance();
-	return $CI->Crud_model->reads($table,$where);
+	return $CI->Crud_model->count_db_read($table,$where);
 }
+
+
+//READS
+function db_reads($table=false,$where=false,$order=false){
+	$CI =& get_instance();
+	return $CI->Crud_model->reads($table,$where,$order);
+}
+
+function count_db_reads($table=false,$where=false){
+	$CI =& get_instance();
+	return $CI->Crud_model->count_db_reads($table,$where);
+}
+
 
 //UPDATE
 function db_update($table=false,$where=false,$update=false){

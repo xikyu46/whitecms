@@ -28,23 +28,27 @@
 					<div class="panel-body">
 						<div class="row"> <!-- start: sort, search and new -->
 							<div class="col-md-4">
-								<div class="input-group">
-									<select class="form-control">
-										<option>Terbaru</option>
-										<option>Terlama</option>
-									</select>
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="button">Go!</button>
-									</span>
-								</div>
+								<form action="<?= current_url();?>">
+									<div class="input-group">
+										<select name="filter" class="form-control">
+											<option value="latest" <? if($this->input->get('filter') == 'latest'){echo "selected";}?>>Terbaru</option>
+											<option value="oldest" <? if($this->input->get('filter') == 'oldest'){echo "selected";}?>>Terlama</option>
+										</select>
+										<span class="input-group-btn">
+											<input type="submit" class="btn btn-default" value="Go!">
+										</span>
+									</div>
+								</form>
 							</div> <!-- end: sort, search and new -->
 							<div class="col-md-4">
-								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Search for..." />
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="button">Cari</button>
-									</span>
-								</div>
+								<form action="<?= current_url();?>">
+									<div class="input-group">
+										<input type="text" name="title" class="form-control" value="<?= $this->input->get('title');?>" placeholder="Search for..." />
+										<span class="input-group-btn">
+											<input type="submit" class="btn btn-default" value="Cari">
+										</span>
+									</div>
+								</form>
 							</div>
 							<div class="col-md-4">
 								<a class="btn btn-success pull-right" href="<?= base_url('admin/news/add');?>" role="button"><i class="fa fa-plus"></i> Add News</a>
@@ -68,7 +72,7 @@
 									<tr>
 										<td><?= $blogRow->id;?></td>
 										<td><?= $blogRow->title;?></td>
-										<td><?= date('d/m/Y',$blogRow->update);?></td>
+										<td><?= date('d/m/Y H:i:s',$blogRow->update);?></td>
 										<td><? if($blogRow->status){echo "Active";}else{echo "Inactive";}?></td>
 										<td>
 										<a href="<?= base_url('admin/news/edit/'.$blogRow->id);?>">Edit</a> | 
@@ -81,21 +85,7 @@
 							</table>
 							<nav> <!-- start: pagination -->
 								<ul class="pagination">
-									<li>
-										<a href="#" aria-label="Previous">
-											<span aria-hidden="true">&laquo;</span>
-										</a>
-									</li>
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li>
-									<li>
-										<a href="#" aria-label="Next">
-											<span aria-hidden="true">&raquo;</span>
-										</a>
-									</li>
+									<?= showpage(current_url(),$count_news);?>
 								</ul>
 							</nav><!-- end: pagination -->
 						</div>

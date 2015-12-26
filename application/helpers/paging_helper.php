@@ -22,12 +22,24 @@
 		$config['base_url'] = current_url(); 
 		$config['total_rows'] = $totalrows;
 		$config['per_page'] = $perpage;
-		$config['prefix'] = '?offset=';
+		if($_SERVER['QUERY_STRING']){
+			parse_str($_SERVER['QUERY_STRING'],$parse_result);
+			unset($parse_result['offset']);
+			$config['prefix'] = '?'.http_build_query($parse_result).'&offset=';
+		}else{
+			$config['prefix'] = '?offset=';
+		}
 		$config['enable_query_strings'] = false;
 // 		$config['page_query_string'] = true;
 		$config['query_string_segment'] = 'offset';
 		$config['reuse_query_string'] = FALSE;
-		$config['first_url'] = $config['base_url'];
+		if($_SERVER['QUERY_STRING']){
+			parse_str($_SERVER['QUERY_STRING'],$parse_result);
+			unset($parse_result['offset']);
+			$config['first_url'] = $config['base_url'].'?'.http_build_query($parse_result);
+		}else{
+			$config['first_url'] = $config['base_url'];
+		}
 		$CI->load->library('pagination');
 		$CI->pagination->initialize($config);
 		return $CI->pagination->create_links();
