@@ -8,8 +8,21 @@ Class Page extends ADMIN_Controller{
 	}
 	
 	function index(){
-		$view['pages'] = db_reads('page',array('type' => 'page'));
-		$view['count_pages'] = count_db_reads('page',array('type' => 'page'));
+		$where = array();
+		$where['type'] = 'page';
+		if($this->input->get('title')){
+			$where['title'] = '%'.$this->input->get('title');
+		}
+		$order=false;
+		if($this->input->get('filter')){
+			if($this->input->get('filter') == 'oldest'){
+				$order['date'] = 'asc';
+			}elseif($this->input->get('filter') == 'latest'){
+				$order['date'] = 'desc';
+			}
+		}
+		$view['pages'] = db_reads('page',$where,$order);
+		$view['count_pages'] = count_db_reads('page',$where);
 		$this->load->view(tpldir('admin/page/index_view'),$view);
 	}
 	

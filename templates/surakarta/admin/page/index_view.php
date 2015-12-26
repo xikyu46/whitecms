@@ -27,22 +27,28 @@
 					<div class="panel-body">
 						<div class="row"><!-- start: sort, search and new -->
 							<div class="col-md-4">
-								<div class="input-group">
-									<select class="form-control">
-										<option>Terbaru</option>
-										<option>Terlama</option>
-									</select>
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="button">Go!</button>
-									</span>
-								</div>
+									<form action="<?= current_url();?>">
+									<div class="input-group">
+										<select name="filter" class="form-control">
+											<option value="latest" <? if($this->input->get('filter') == 'latest'){echo "selected";}?>>Terbaru</option>
+											<option value="oldest" <? if($this->input->get('filter') == 'oldest'){echo "selected";}?>>Terlama</option>
+										</select>
+										<span class="input-group-btn">
+											<input type="submit" class="btn btn-default" value="Go!">
+										</span>
+									</div>
+								</form>
 							</div>
 							<div class="col-md-4">
 								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Search for..." />
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="button">Cari</button>
-									</span>
+									<form action="<?= current_url();?>">
+									<div class="input-group">
+										<input type="text" name="title" class="form-control" value="<?= $this->input->get('title');?>" placeholder="Search for..." />
+										<span class="input-group-btn">
+											<input type="submit" class="btn btn-default" value="Cari">
+										</span>
+									</div>
+								</form>
 								</div>
 							</div>
 							<div class="col-md-4">
