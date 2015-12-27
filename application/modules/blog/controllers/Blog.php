@@ -19,7 +19,8 @@ Class Blog extends MX_Controller{
 	
 	function cat($type=false){
 		if($type){
-			$blogs = db_reads('page',array('type' => $type, 'status' => 1));
+			$order['date'] = 'desc';
+			$blogs = db_reads('page',array('type' => $type, 'status' => 1),$order);
 			$view['blogs'] = $blogs;
 			$this->load->view(tpldir('page/post-list'),$view);
 		}

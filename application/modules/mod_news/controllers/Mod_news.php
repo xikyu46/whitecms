@@ -3,10 +3,11 @@ Class Mod_news extends MX_Controller{
 		
 	public function get($id=false){
 		$result = jsonSrc();
+		$order['date'] = 'desc';
 		if($id){
-			$news = db_read('page',array('id' => $id,'type' => 'news'));
+			$news = db_read('page',array('id' => $id,'type' => 'news'),$order);
 		}else{
-			$news = db_read('page',array('type' => 'news'));
+			$news = db_read('page',array('type' => 'news'),$order);
 		}
 		if($news){
 			$result['resultCode'] = 1000;
@@ -107,7 +108,8 @@ Class Mod_news extends MX_Controller{
 	}
 	
 	function outclient(){
-		$view['news'] = db_reads('page',array('type' => 'news','status' => 1));
+		$order['date'] = 'desc';
+		$view['news'] = db_reads('page',array('type' => 'news','status' => 1),$order);
 		$this->load->view(tpldir('modules/mod_news/index_view'),$view);
 	}
 	
