@@ -8,7 +8,12 @@
 					<span class="text-muted"><?= date('d F Y',$row->date);?></span>
 				</div>
 				<h4 class="event-title">
-					<a href="<?= base_url($row->url);?>"><?= $row->title;?></a>
+					<? if(preg_match('#'.preg_quote('http://').'#'),$row->url){?>
+						<a href="<?= $row->url;?>"><?= $row->title;?></a>
+					<? }else{?>
+						<a href="<?= base_url($row->url);?>"><?= $row->title;?></a>
+					<? }?>
+					
 				</h4>
 			</div>
 		<? }?>
