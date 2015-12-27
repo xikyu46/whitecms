@@ -2,16 +2,20 @@
 Class Asset extends ADMIN_Controller{
 	function index(){
 		$view['asset'] = db_reads('mod_asset_dir');
+		$view['count_asset'] = count_db_reads('mod_asset_dir');
 		$this->load->view(tpldir('admin/extension/asset/index_view'),$view);
 	}
 	
 	function detail($id=false){
 		if($id){
+			$_GET['nooffset'] = true;
 			$view['asset_dir'] = db_read('mod_asset_dir',array('id' => $id));
+			$_GET['nooffset'] = false;
 			if(!$view['asset_dir']){
 				redirect(base_url('admin/asset'));
 			}
 			$view['asset'] = db_reads('mod_asset',array('dirid' => $id));
+			$view['count_asset'] = count_db_reads('mod_asset',array('dirid' => $id));
 			$this->load->view(tpldir('admin/extension/asset/detail_view'),$view);
 		}
 	}

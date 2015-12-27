@@ -25,7 +25,11 @@ Class Crud_model extends CI_Model{
 	function where($table=false,$where=false,$count=false,$order=false){
 		if($table){
 			$limit = $this->config->item('limit_page');
-			$offset = $this->input->get('offset');
+			if(!$this->input->get('nooffset')){
+				$offset = $this->input->get('offset');
+			}else{
+				$offset = false;
+			}
 			$offset = ($offset > 0) ? $offset : 0;
 			if(is_array($where)){
 				foreach($where as $key => $row){

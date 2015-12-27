@@ -47,6 +47,11 @@
 									<? }?>
 								</tbody>
 							</table>
+							<nav> <!-- start: pagination -->
+								<ul class="pagination">
+									<?= showpage(current_url(),$count_asset);?>
+								</ul>
+							</nav><!-- end: pagination -->
 							<hr/>
 								<div class="form-group">
 							<form id="formUploadFile" method="post" enctype="multipart/form-data" action="<?= base_url('admin/asset/add');?>">
