@@ -34,7 +34,7 @@
 										<td class="col-sm-2 text-left"></td>
 									</tr>
 									<? if($asset){?>
-										<? $index=1;?>
+										<? $index=1 + $this->input->get('offset');?>
 										<? foreach($asset as $assetRow){?>
 										<tr>
 											<td class="text-right"><?= $index;?></td>
