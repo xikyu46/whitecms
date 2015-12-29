@@ -10,4 +10,4 @@
 				</div>
 			<? }?>
 		<? }?>
-		<h4 class="more"><a href="#">More Videos <i class="fa fa-angle-right"></i></a></h4>
+		<h4 class="more"><a href="<?= base_url('blog/video');?>">More Videos <i class="fa fa-angle-right"></i></a></h4>

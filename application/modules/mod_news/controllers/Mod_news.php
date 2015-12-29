@@ -35,7 +35,7 @@ Class Mod_news extends MX_Controller{
 		$result = jsonSrc();
 		if($id){
 			$updatePage['author'] = false;
-			$updatePage['date'] = time();
+			$updatePage['update'] = time();
 			$updatePage['url'] = $this->input->post('url');
 			$updatePage['title'] = $this->input->post('title');
 			$updatePage['title_en'] = $this->input->post('title_en');

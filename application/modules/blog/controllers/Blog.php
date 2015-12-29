@@ -21,7 +21,9 @@ Class Blog extends MX_Controller{
 		if($type){
 			$order['date'] = 'desc';
 			$blogs = db_reads('page',array('type' => $type, 'status' => 1),$order);
+			$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1),$order);
 			$view['blogs'] = $blogs;
+			$view['count_blogs'] = $count_blogs;
 			$this->load->view(tpldir('page/post-list'),$view);
 		}
 	}
@@ -33,7 +35,9 @@ Class Blog extends MX_Controller{
 			$this->load->view(tpldir('page/video'),$view);
 		}else{
 			$video = db_reads('mod_video',array('status' => 1));
+			$count_video = count_db_reads('mod_video',array('status' => 1));
 			$view['video'] = $video;
+			$view['count_video'] = $count_video;
 			$this->load->view(tpldir('page/video-list'),$view);
 		}
 	}

@@ -33,7 +33,7 @@ Class Mod_event extends MX_Controller{
 	public function put($id=false){
 		$result = jsonSrc();
 		if($id){
-			$updatePage['date'] = time();
+			$updatePage['date'] = strtotime($this->input->post('date'));
 			$updatePage['url'] = $this->input->post('url');
 			$updatePage['title'] = $this->input->post('title');
 			$updatePage['title_en'] = $this->input->post('title_en');
@@ -62,7 +62,7 @@ Class Mod_event extends MX_Controller{
 		$result = jsonSrc();
 			$createPage['catid'] = $this->input->post('catid');
 			$createPage['author'] = $sess_admin_user;
-			$createPage['date'] = time();
+			$createPage['date'] = strtotime($this->input->post('date'));
 			$createPage['update'] = time();
 			$createPage['title'] = $this->input->post('title');
 			$createPage['url'] = $this->input->post('url');

@@ -2,6 +2,7 @@
 Class Video extends ADMIN_Controller{
 	function index(){
 		$view['video'] = db_reads('mod_video');
+		$view['count_video'] = count_db_reads('mod_video');
 		$this->load->view(tpldir('admin/extension/video/index_view'),$view);
 	}
 	
@@ -10,15 +11,15 @@ Class Video extends ADMIN_Controller{
 			$this->load->view(tpldir('admin/extension/video/add_view'));
 		}else{
 			$result = jsonSrc();
-			$insertVid['date'] = time();
-			$insertVid['name'] = $this->input->post('name');
-			$insertVid['description'] = $this->input->post('description');
-			$insertVid['link'] = $this->input->post('link');
+			$insertVid['url'] = $this->input->post('url');
+			$insertVid['status'] = $this->input->post('status');
+			$insertVid['text'] = $this->input->post('text');
+			$insertVid['content'] = $this->input->post('content');
 			$id = db_create('mod_video',$insertVid);
 			if($id){
 				$result['resultCode'] = 1000;
 				$result['resultMsg'] = "Success !!";
-				$result['resultData']['openUrl'] = $this->agent->referrer();
+				$result['resultData']['openUrl'] = base_url('admin/video');
 			}
 			echo json_encode($result);
 		}
@@ -41,5 +42,16 @@ Class Video extends ADMIN_Controller{
 			$result['resultData']['openUrl'] = base_url('admin/video');
 			echo json_encode($result);
 		}
+	}
+	
+	function delete($id=false){
+		$result = jsonSrc();
+		if($id){
+			$menu_item_id = db_delete('mod_video',array('id' => $id));
+			$result['resultCode'] = 1000;
+			$result['resultMsg'] = "Success !!";
+			$result['resultData']['openUrl'] = base_url('admin/video');
+		}
+		echo json_encode($result);
 	}
 }

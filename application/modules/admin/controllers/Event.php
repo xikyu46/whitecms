@@ -9,6 +9,7 @@ Class Event extends ADMIN_Controller{
 	
 	function index(){
 		$view['event'] = db_reads('page',array('type' => 'event'));
+		$view['count_event'] = count_db_reads('page',array('type' => 'event'));
 		$this->load->view(tpldir('admin/event/index_view'),$view);
 	}
 	
@@ -45,7 +46,7 @@ Class Event extends ADMIN_Controller{
 		}else{
 			$result = jsonSrc();
 			$result = $this->mod_event->post();
-			$result['resultData']['openUrl'] = $this->agent->referrer();
+			$result['resultData']['openUrl'] = base_url('admin/event');
 			echo json_encode($result);
 		}
 	}

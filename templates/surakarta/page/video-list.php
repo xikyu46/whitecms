@@ -16,12 +16,9 @@
 					<div class="col-md-2">
 						<span class="text-muted"><?= date('F d, Y',$row->date);?></span>
 					</div>
-					<div class="col-md-3">
-						<img class="img-responsive main-img" src="<?= $row->image;?>" />
-					</div>
 					<div class="col-md-7">
-						<h4><a href="<?= base_url($row->url);?>"><?= $row->{'title'.$lang_sess};?></a></h4>
-						<p><?= content_trim($row->{'content'.$lang_sess},200);?></p>
+						<h4><a href="<?= base_url('blog/video/'.$row->id);?>"><?= $row->{'text'};?></a></h4>
+						<p><?= content_trim($row->{'content'},200);?></p>
 					</div>
 					</div>
 					<hr />
@@ -31,16 +28,7 @@
 			  <? }?>
 			  <nav>
 				<ul class="pagination">
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li>
-					<a href="#" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-					</a>
-					</li>
+					<?= showpage(current_url(),$count_video);?>
 				</ul>
 			</nav>
 			

@@ -36,9 +36,13 @@
 								<input class="form-control" name="title" required  />
 							</div>
 							<div class="form-group">
+								<label>Tanggal:</label>
+								<input class="form-control datepicker" name="date" required  />
+							</div>
+							<div class="form-group">
 								<label>Url:</label>
 								<div class="input-group">
-									<div class="input-group-addon"><?= base_url('blog');?></div><input class="form-control" name="url"  />
+									<div class="input-group-addon"><?= base_url('event');?>/</div><input class="form-control" name="url"  />
 								</div>
 							</div>
 							<div class="form-group">
@@ -85,6 +89,11 @@
 	</div> <!-- end: page content container --> 
 	
 <script>
+$(document).ready(function() {
+    $('.datepicker').datepicker({
+            format: 'dd-mm-yyyy',
+        });
+});
 CKEDITOR.replace( 'content' );
 CKEDITOR.replace( 'content-en' );
 formGeneral('#formPageEdit');
