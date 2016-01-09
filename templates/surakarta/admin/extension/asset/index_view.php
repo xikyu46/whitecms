@@ -40,6 +40,18 @@
 									<?= showpage(current_url(),$count_asset);?>
 								</ul>
 							</nav><!-- end: pagination -->
+							<div class="col-md-12">
+								<div class="col-md-4">
+								<form role="form" id="formNewfolder" method="post" class="form inline" action="<?= base_url('admin/asset/newfolder');?>">
+									<div class="form-group">
+										<label>Folder Name:</label>
+										<input type="text" name="folder"  class="form-control">
+									</div>
+								<input  type="submit" class="btn btn-success pull-right"  value="New Folder" role="button">
+								</form>
+								</div>
+								
+							</div>
 						</div>
 					</div> <!-- end: panel body -->
 				</div> <!-- end: panel -->
@@ -48,5 +60,8 @@
 	</div> <!-- end: page content container -->
 </div>
 <p><!-- end: page content --></p>
+<script>
+formGeneral('#formNewfolder');
+</script>
 <? $this->load->view(tpldir('admin/footer_view'));?>
  

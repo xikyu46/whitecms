@@ -6,6 +6,26 @@ Class Asset extends ADMIN_Controller{
 		$this->load->view(tpldir('admin/extension/asset/index_view'),$view);
 	}
 	
+	function newfolder(){
+		$result = jsonSrc();
+		if(!empty($_POST)){
+			$folder = $this->input->post('folder');
+			$dir = db_read('mod_asset_dir',array('name',$folder));
+			if($dir){
+				$result['resultMsg'] = "Directory exists";
+				echo json_encode($result);exit;
+			}else{
+				$insertFolder['name'] = $folder;
+				db_create('mod_asset_dir',$insertFolder);
+				$result['resultCode'] = 1000;
+				$result['resultMsg'] = "Command Complete Successfully";
+				$result['resultData']['openUrl'] = base_url('admin/asset');
+			}
+			
+		}
+		echo json_encode($result);
+	}
+	
 	function modal($inputid=false){
 		$_GET['nopage'] = true;
 		$view['asset'] = db_reads('mod_asset_dir');
