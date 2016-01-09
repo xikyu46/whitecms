@@ -24,7 +24,12 @@ Class Crud_model extends CI_Model{
 	
 	function where($table=false,$where=false,$count=false,$order=false){
 		if($table){
-			$limit = $this->config->item('limit_page');
+			if(!$this->input->get('nopage')){
+				$limit = $this->config->item('limit_page');
+			}else{
+				$limit = false;
+			}
+			
 			if(!$this->input->get('nooffset')){
 				$offset = $this->input->get('offset');
 			}else{

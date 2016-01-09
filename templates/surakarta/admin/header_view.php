@@ -13,6 +13,7 @@
 		<link href="<?= tplurl('admin/includes/css/proton/style.min.css');?>" rel="stylesheet">
 		<link href="<?= tplurl('admin/includes/font-awesome/css/font-awesome.min.css');?>" rel="stylesheet">
 		<link href="<?= tplurl('admin/includes/css/datepicker.css');?>" rel="stylesheet">
+		<link href="<?= tplurl('admin/includes/css/style.css');?>" rel="stylesheet">
 		
 		<script src="<?= tplurl('admin/includes/js/jquery.js');?>"></script>
 		<script src="<?= tplurl('admin/includes/js/bootstrap.min.js');?>"></script>

@@ -6,6 +6,32 @@ Class Asset extends ADMIN_Controller{
 		$this->load->view(tpldir('admin/extension/asset/index_view'),$view);
 	}
 	
+	function modal($inputid=false){
+		$_GET['nopage'] = true;
+		$view['asset'] = db_reads('mod_asset_dir');
+		$_GET['nopage'] = false;
+		$view['count_asset'] = count_db_reads('mod_asset_dir');
+		$view['inputid'] = $inputid;
+		$this->load->view(tpldir('admin/extension/asset/modal/index_view'),$view);
+	}
+	
+	function modaldetail($id=false,$inputid=false){
+		if($id){
+			$_GET['nooffset'] = true;
+			$view['asset_dir'] = db_read('mod_asset_dir',array('id' => $id));
+			$_GET['nooffset'] = false;
+			
+			if(!$view['asset_dir']){
+				redirect(base_url('admin/asset'));
+			}
+			$_GET['nopage'] = true;
+			$view['asset'] = db_reads('mod_asset',array('dirid' => $id));
+			$_GET['nopage'] = false;
+			$view['inputid'] = $inputid;
+			$this->load->view(tpldir('admin/extension/asset/modal/detail_view'),$view);
+		}
+	}
+	
 	function detail($id=false){
 		if($id){
 			$_GET['nooffset'] = true;
@@ -17,6 +43,12 @@ Class Asset extends ADMIN_Controller{
 			$view['asset'] = db_reads('mod_asset',array('dirid' => $id));
 			$view['count_asset'] = count_db_reads('mod_asset',array('dirid' => $id));
 			$this->load->view(tpldir('admin/extension/asset/detail_view'),$view);
+		}
+	}
+	
+	function addfolder(){
+		if(empty($_POST)){
+			$this->load->view(tpldir('admin/extension/asset/detail_view'));
 		}
 	}
 	

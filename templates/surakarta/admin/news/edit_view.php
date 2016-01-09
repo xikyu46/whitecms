@@ -41,18 +41,28 @@
 									<div class="input-group-addon"><?= base_url('news');?>/</div><input class="form-control" name="url" value="<?= $blog->url;?>" />
 								</div>
 							</div>
-							<div class="form-group">
+<!--							<div class="form-group">
 								<label>Tanggal:</label>
 								<label><?= date('d/m/Y H:i:s',$blog->update);?></label>
-<!-- 								<input class="form-control" name="date" value="<?= date('d/m/Y',$blog->date);?>" /> -->
 							</div>
+-->
 							<div class="form-group">
 								<label>Status:</label>
 									<input name="status" type="checkbox" value="1" <? if($blog->status){echo "checked";}?> />
 							</div>
 							<div class="form-group">
 								<label>Image:</label>
-								<input class="form-control" name="image" value="<?= $blog->image;?>" />
+								<div class="input-group">
+									<input class="form-control" id="image" name="image" value="<?= $blog->image;?>" />
+<!-- 									<div class="input-group-addon"> -->
+									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/image');?>');">
+									
+									<i class="fa fa-picture-o"></i>
+									
+									</a>
+<!-- 									</div> -->
+								</div>
+								
 							</div>
 							<!--<div class="form-group">
 								<label>Image 2:</label>
