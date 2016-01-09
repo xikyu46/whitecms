@@ -27,7 +27,14 @@
 						<form role="form" method="post" id="formNwsEdit" action="<?= current_url();?>">
 							<div class="form-group">
 								<label>URL:</label>
-								<input name="url" class="form-control" required value="<?= $banner->url;?>">
+								<div class="input-group">
+									<input name="url" id="url" class="form-control" required value="<?= $banner->url;?>">
+									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/url');?>');">
+									<i class="fa fa-picture-o"></i>
+									</a>
+								</div>
+
+								
 							</div>
 							<div class="form-group">
 								<label>Status:</label>

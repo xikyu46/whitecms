@@ -54,13 +54,9 @@
 								<label>Image:</label>
 								<div class="input-group">
 									<input class="form-control" id="image" name="image" value="<?= $blog->image;?>" />
-<!-- 									<div class="input-group-addon"> -->
 									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/image');?>');">
-									
 									<i class="fa fa-picture-o"></i>
-									
 									</a>
-<!-- 									</div> -->
 								</div>
 								
 							</div>
