@@ -29,11 +29,6 @@
 									<? }?>
 								</tbody>
 							</table>
-							<nav> <!-- start: pagination -->
-								<ul class="pagination">
-									<?= showpage(current_url(),$count_asset);?>
-								</ul>
-							</nav><!-- end: pagination -->
 						</div>
 					</div> <!-- end: panel body -->
 				</div> <!-- end: panel -->
