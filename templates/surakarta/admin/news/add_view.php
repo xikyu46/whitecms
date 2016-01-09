@@ -47,7 +47,12 @@
 							</div>
 							<div class="form-group">
 								<label>Image:</label>
-								<input class="form-control" name="image"/>
+								<div class="input-group">
+									<input class="form-control" name="image" id="image"/>
+									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/image');?>');">
+									<i class="fa fa-picture-o"></i>
+									</a>
+								</div>
 							</div>
 							<!--<div class="form-group">
 								<label>Image 2:</label>
