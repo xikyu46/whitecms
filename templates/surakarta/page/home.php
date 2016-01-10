@@ -70,7 +70,7 @@
 	<div class="container">
 		<div class="home-post">
 			<div class="row">
-				<?= view_mod('news','outclient');?>
+				<?= view_mod('news','announce');?>
 				<div class="col-md-7">
 					<div class="row">
 						<div class="col-md-6">

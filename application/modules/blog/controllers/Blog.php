@@ -17,11 +17,17 @@ Class Blog extends MX_Controller{
 		$this->load->view(tpldir('page/'.$page->template),$view);
 	}
 	
-	function cat($type=false){
+	function cat($type=false,$catid=false){
 		if($type){
 			$order['date'] = 'desc';
-			$blogs = db_reads('page',array('type' => $type, 'status' => 1),$order);
-			$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1),$order);
+			if($catid){
+				$blogs = db_reads('page',array('type' => $type, 'status' => 1,'catid' => $catid),$order);
+				$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1,'catid' => $catid),$order);
+			}else{
+				$blogs = db_reads('page',array('type' => $type, 'status' => 1),$order);
+				$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1),$order);
+			}
+			
 			$view['blogs'] = $blogs;
 			$view['count_blogs'] = $count_blogs;
 			$this->load->view(tpldir('page/post-list'),$view);

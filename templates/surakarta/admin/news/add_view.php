@@ -46,6 +46,10 @@
 									<input name="status" type="checkbox" value="1" checked />
 							</div>
 							<div class="form-group">
+								<label>Pengumuman:</label>
+									<input name="pengumuman" type="checkbox" value="1" />
+							</div>
+							<div class="form-group">
 								<label>Image:</label>
 								<div class="input-group">
 									<input class="form-control" name="image" id="image"/>

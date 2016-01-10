@@ -51,6 +51,10 @@
 									<input name="status" type="checkbox" value="1" <? if($blog->status){echo "checked";}?> />
 							</div>
 							<div class="form-group">
+								<label>Pengumuman:</label>
+									<input name="pengumuman" type="checkbox" value="1" <? if($blog->catid == '9'){echo "checked";}?>/>
+							</div>
+							<div class="form-group">
 								<label>Image:</label>
 								<div class="input-group">
 									<input class="form-control" id="image" name="image" value="<?= $blog->image;?>" />

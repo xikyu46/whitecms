@@ -52,6 +52,12 @@ Class Mod_news extends MX_Controller{
 			$updatePage['image2'] = $this->input->post('image2');
 			$updatePage['status'] = $this->input->post('status');
 			$updatePage['tag'] = $this->input->post('tag');
+			if($this->input->post('pengumuman')){
+				$updatePage['catid'] = 9; 
+			}else{
+				$updatePage['catid'] = 0; 
+			}
+			
 			$updatePage['type'] = 'news'; 
 			db_update('page',array('id' => $id),$updatePage);
 			$result['resultCode'] = 1000;
@@ -88,6 +94,9 @@ Class Mod_news extends MX_Controller{
 			$createPage['image2'] = $this->input->post('image2');
 			$createPage['status'] = $this->input->post('status');
 			$createPage['tag'] = $this->input->post('tag');
+			if($this->input->post('pengumuman')){
+				$createPage['catid'] = 9; 
+			}
 			$createPage['type'] = 'news';
 			$page_id = db_create('page',$createPage);
 			
@@ -127,5 +136,13 @@ Class Mod_news extends MX_Controller{
 			$view['news'] = db_reads('page',array('type' => 'news','status' => 1,'tag !=' => $news->tag, 'id !=' => $news->id));
 			$this->load->view(tpldir('modules/mod_news/other_view'),$view);
 		}
+	}
+	
+	function announce($id=false){
+		$order['date'] = 'desc';
+		$_GET['nopage'] = true;
+		$view['news'] = db_reads('page',array('type' => 'news','status' => 1,'catid' => 9),$order);
+		$_GET['nopage'] = false;
+		$this->load->view(tpldir('modules/mod_news/index_view'),$view);
 	}
 }
