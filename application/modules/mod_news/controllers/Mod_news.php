@@ -143,6 +143,6 @@ Class Mod_news extends MX_Controller{
 		$_GET['nopage'] = true;
 		$view['news'] = db_reads('page',array('type' => 'news','status' => 1,'catid' => 9),$order);
 		$_GET['nopage'] = false;
-		$this->load->view(tpldir('modules/mod_news/index_view'),$view);
+		$this->load->view(tpldir('modules/mod_news/announce_view'),$view);
 	}
 }
