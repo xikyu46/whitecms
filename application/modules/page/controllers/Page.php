@@ -22,7 +22,12 @@ Class Page extends MX_Controller{
 			if($id){
 				$page = db_read('page',array('id' => $id));
 			}else{
-				$page = db_read('page',array('url' => $url));
+				if($url){
+					$page = db_read('page',array('url' => $url));
+				}else{
+					$page = db_read('page',array('main' => 1));
+				}
+				
 			}
 			if(!$page){
 				show_404();exit;

@@ -30,7 +30,7 @@ Class Mod_menu extends MX_Controller{
 	}
 	
 	public function post(){
-		$result = jsonSrc();
+		$result = jsonSrgetc();
 			$createMenu['title'] = $this->input->post('title');
 			$createMenu['title_en'] = $this->input->post('title_en');
 			$createMenu['post_id'] = $this->input->post('post_id');
@@ -70,14 +70,17 @@ Class Mod_menu extends MX_Controller{
 		$menu = $this->get();
 		$pageResult = $this->Page_model->get_page_list();
 		$pages=false;
+		$main=false;
 		if($pageResult){
 			foreach($pageResult as  $pageRow){
 				$pages[$pageRow->id] = $pageRow->url;
+				$main[$pageRow->id] = $pageRow->main;
 			}
 		}
 		if($menu['resultCode'] == 1000){
 			$view['menu'] = $menu['resultData'];
 			$view['pages'] = $pages;
+			$view['default'] = $main;
 			$this->load->view(tpldir('modules/mod_menu/index_view'),$view);
 		}
 	}

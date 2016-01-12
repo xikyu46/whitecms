@@ -5,7 +5,11 @@
 		<? if(!$menu_row->hide){?>
 			<? if(!$menu_row->submenu){?>
 				<? if($menu_row->post_id){?>
-					<li><a href="<?= base_url($pages[$menu_row->post_id]);?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
+					<? if($default[$menu_row->post_id]){?>
+						<li><a href="<?= base_url();?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
+					<? }else{?>
+						<li><a href="<?= base_url($pages[$menu_row->post_id]);?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
+					<? }?>
 				<? }else{?>
 					<li><a href="<?= base_url($menu_row->link);?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
 				<? }?>
