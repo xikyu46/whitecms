@@ -27,13 +27,26 @@
 						<form role="form" method="post" id="formNwsEdit" action="<?= current_url();?>">
 							<div class="form-group">
 								<label>URL:</label>
+								<input name="url" id="url" class="form-control" required value="<?= $slidebanner->url;?>">
+							</div>
+							<div class="form-group">
+								<label>Image:</label>
 								<div class="input-group">
-									<input name="url" id="url" class="form-control" required value="<?= $slidebanner->url;?>">
-									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/url');?>');">
+									<input name="imgurl" id="imgurl" class="form-control" required value="<?= $slidebanner->imgurl;?>">
+									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/imgurl');?>');">
 									<i class="fa fa-picture-o"></i>
 									</a>
 								</div>
 							</div>
+							<div class="form-group">
+								<label>Tanggal:</label>
+								<input class="form-control datepicker" name="date" required  value="<?= date('d-m-Y',$slidebanner->date);?>"/>
+							</div>
+							<div class="form-group">
+								<label>Title:</label>
+								<input name="title"  class="form-control" required value="<?= $slidebanner->title;?>">
+							</div>
+							
 							<div class="form-group">
 								<label>Text:</label>
 								<textarea name="text" class="form-control"><?= $slidebanner->text;?></textarea>
@@ -55,6 +68,11 @@
 		</div>
 	</div> <!-- end: page content container --> 
 <script>
+$(document).ready(function() {
+    $('.datepicker').datepicker({
+            format: 'dd-mm-yyyy',
+        });
+});
 formGeneral('#formNwsEdit');
 </script>
 <? $this->load->view(tpldir('admin/footer_view'));?>

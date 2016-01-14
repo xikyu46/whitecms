@@ -21,8 +21,10 @@
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>IMG Url</th>
+										<th>Url</th>
+										<th>Title</th>
 										<th>Text</th>
+										<th>IMG</th>
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
@@ -32,7 +34,9 @@
 										<tr>
 											<td><?= $bannerRow->id;?></td>
 											<td><?= $bannerRow->url;?></td>
+											<td><?= $bannerRow->title;?></td>
 											<td><?= $bannerRow->text;?></td>
+											<td><img src="<?= $bannerRow->imgurl;?>" style="height:50px"/></td>
 											<td><? if($bannerRow->status){echo "Active";}else{echo "Inactive";};?></td>
 											<td>
 											<a href="<?= base_url('admin/slidebanner/edit/'.$bannerRow->id);?>">Edit</a>

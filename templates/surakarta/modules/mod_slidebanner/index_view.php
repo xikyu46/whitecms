@@ -18,7 +18,8 @@
 						<img  src="<?= $row->url;?>" >
 						<div class="container">
 							<div class="carousel-caption">
-							<p><?= $row->text;?></p>
+							<h1><?= $row->title;?></h1>
+							<p><?= parse_url($row->url, PHP_URL_HOST);?> (<?= date('Y-m-d', $row->date);?>) - <?= $row->text;?></p>
 							</div>
 						</div>
 					</div>
