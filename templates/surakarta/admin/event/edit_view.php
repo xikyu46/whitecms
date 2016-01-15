@@ -48,7 +48,7 @@
 							<div class="form-group">
 								<label>Image:</label>
 								<div class="input-group">
-									<input name="image" id="imgurl" class="form-control" required >
+									<input name="image" id="imgurl" class="form-control" required value="<?= $blog->image;?>">
 									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/imgurl');?>');">
 									<i class="fa fa-picture-o"></i>
 									</a>
