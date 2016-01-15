@@ -65,7 +65,11 @@ Class Mod_event extends MX_Controller{
 			$createPage['date'] = strtotime($this->input->post('date'));
 			$createPage['update'] = time();
 			$createPage['title'] = $this->input->post('title');
-			$createPage['url'] = $this->input->post('url');
+			if($this->input->post('url')){
+				$createPage['url'] = $this->input->post('url');
+			}else{
+				$createPage['url'] = preg_replace('[\ ]','-',preg_replace('[^a-z0-9\ ]','',strtolower($this->input->post('title'))));
+			}
 			$createPage['title_en'] = $this->input->post('title_en');
 			$createPage['excerpt'] = $this->input->post('excerpt');
 			$createPage['excerpt_en'] = $this->input->post('excerpt_en');
@@ -78,6 +82,7 @@ Class Mod_event extends MX_Controller{
 			$createPage['template'] = $this->input->post('template');
 			$createPage['image'] = $this->input->post('image');
 			$createPage['status'] = $this->input->post('status');
+			$createPage['image'] = $this->input->post('image');
 			$createPage['type'] = 'event';
 			$page_id = db_create('page',$createPage);
 			

@@ -46,6 +46,15 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<label>Image:</label>
+								<div class="input-group">
+									<input name="image" id="imgurl" class="form-control" required >
+									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/imgurl');?>');">
+									<i class="fa fa-picture-o"></i>
+									</a>
+								</div>
+							</div>
+							<div class="form-group">
 								<label>Status:</label>
 									<input name="status" type="checkbox" value="1" checked />
 							</div>

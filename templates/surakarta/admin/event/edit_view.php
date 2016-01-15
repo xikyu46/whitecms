@@ -45,6 +45,15 @@
 									<div class="input-group-addon"><?= base_url('event');?>/</div><input class="form-control" name="url" value="<?= $blog->url;?>" />
 								</div>
 							</div>
+							<div class="form-group">
+								<label>Image:</label>
+								<div class="input-group">
+									<input name="image" id="imgurl" class="form-control" required >
+									<a class="input-group-addon" href="#" onclick="showModal('<?= base_url('admin/asset/modal/imgurl');?>');">
+									<i class="fa fa-picture-o"></i>
+									</a>
+								</div>
+							</div>
 							<!--<div class="form-group">
 								<label>Tanggal:</label>
 								<label><?= date('d/m/Y H:i:s',$blog->update);?></label>
