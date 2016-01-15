@@ -19,7 +19,7 @@
 						<img  src="<?= $row->imgurl;?>" >
 						<div class="container">
 							<div class="carousel-caption">
-							<h1><?= $row->{'title'.$lang_sess};?></h1>
+							<h1><a href="<?= $row->url;?>"><?= $row->{'title'.$lang_sess};?></a></h1>
 							<p><?= parse_url($row->url, PHP_URL_HOST);?> (<?= date('Y-m-d', $row->date);?>) - <?= $row->{'text'.$lang_sess};?></p>
 							</div>
 						</div>
