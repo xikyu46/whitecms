@@ -29,7 +29,7 @@ Class Blog extends MX_Controller{
 				$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1,'catid' => $catid),$order);
 			}else{
 				if($type == 'event'){
-					$blogs = db_reads('page',array('type' => $type, 'status' => 1,'date' >= strtotime(date('Y-m-d'))),$order);
+					$blogs = db_reads('page',array('type' => $type, 'status' => 1,'date >=' => strtotime(date('Y-m-d'))),$order);
 					$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1),$order);
 				}else{
 					$blogs = db_reads('page',array('type' => $type, 'status' => 1),$order);
