@@ -30,7 +30,7 @@ Class Mod_menu extends MX_Controller{
 	}
 	
 	public function post(){
-		$result = jsonSrgetc();
+		$result = jsonSrc();
 			$createMenu['title'] = $this->input->post('title');
 			$createMenu['title_en'] = $this->input->post('title_en');
 			$createMenu['post_id'] = $this->input->post('post_id');
