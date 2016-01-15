@@ -34,7 +34,7 @@
 						<h3 class="panel-title">Add New Menu</h3>
 					</div> <!-- end: panel heading -->
 					<div class="panel-body">
-						<form role="form" action="<?= current_url();?>" method="post">
+						<form role="form" id="formMenuEdit" action="<?= current_url();?>" method="post">
 							<div class="form-group">
 								<label>Title:</label>
 								<input class="form-control" placeholder="Title" name="title" />
