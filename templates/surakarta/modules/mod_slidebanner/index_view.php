@@ -1,3 +1,4 @@
+<? $lang_sess = (getlang()) ? '_'.getlang() : ''?> 
 	<!-- Indicators -->
 	<div id="homeCarousel" class="carousel slide" data-ride="carousel">
 			<? if($banner){?>
@@ -15,11 +16,11 @@
 				<? $index=0;?>
 				<? foreach($banner as $row){?>
 					<div class="item <? if(!$index){echo "active";}?>">
-						<img  src="<?= $row->url;?>" >
+						<img  src="<?= $row->imgurl;?>" >
 						<div class="container">
 							<div class="carousel-caption">
-							<h1><?= $row->title;?></h1>
-							<p><?= parse_url($row->url, PHP_URL_HOST);?> (<?= date('Y-m-d', $row->date);?>) - <?= $row->text;?></p>
+							<h1><?= $row->{'title'.$lang_sess};?></h1>
+							<p><?= parse_url($row->url, PHP_URL_HOST);?> (<?= date('Y-m-d', $row->date);?>) - <?= $row->{'text'.$lang_sess};?></p>
 							</div>
 						</div>
 					</div>

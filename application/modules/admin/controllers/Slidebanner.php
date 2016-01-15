@@ -17,8 +17,10 @@ Class Slidebanner extends ADMIN_Controller{
 			$updateBanner['imgurl'] = $this->input->post('imgurl');
 			$updateBanner['status'] = $this->input->post('status');
 			$updateBanner['text'] = $this->input->post('text');
+			$updateBanner['text_en'] = $this->input->post('text_en');
 			$updateBanner['date'] = strtotime($this->input->post('date'));
 			$updateBanner['title'] = $this->input->post('title');
+			$updateBanner['title_en'] = $this->input->post('title_en');
 			db_update('mod_slidebanner',array('id' => $id),$updateBanner);
 			$result['resultCode'] = 1000;
 			$result['resultMsg'] = "SlideBanner Updated";

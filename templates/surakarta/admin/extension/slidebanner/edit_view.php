@@ -57,6 +57,18 @@
 									<input name="status" value="1" type="checkbox" <? if($slidebanner->status){echo "checked";}?>> active
 								</label>
 							</div>
+							<hr>
+							<label>English</label>
+							<div class="form-group">
+								<label>Title:</label>
+								<input name="title_en"  class="form-control" required value="<?= $slidebanner->title_en;?>">
+							</div>
+							
+							<div class="form-group">
+								<label>Text:</label>
+								<textarea name="text_en" class="form-control"><?= $slidebanner->text_en;?></textarea>
+							</div>
+							
 							<div class="form-group">
 								<input type="hidden" name="id" value="<?= $slidebanner->id;?>">
 								<input class="btn btn-success" type="submit" value="Submit">

@@ -98,7 +98,10 @@ Class Mod_event extends MX_Controller{
 	}
 	
 	function outclient(){
-		$view['event'] = db_reads('page',array('type' => 'event','status' => 1));
+		$_GET['limit'] = 4;
+		$order['date'] = 'desc';
+		$view['event'] = db_reads('page',array('type' => 'event','status' => 1),$order);
+		$_GET['limit'] = false;
 		$this->load->view(tpldir('modules/mod_event/index_view'),$view);
 	}
 }

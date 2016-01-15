@@ -19,13 +19,22 @@ Class Blog extends MX_Controller{
 	
 	function cat($type=false,$catid=false){
 		if($type){
-			$order['date'] = 'desc';
+			if($type == 'event'){
+				$order['date'] = 'asc';
+			}else{
+				$order['date'] = 'desc';
+			}
 			if($catid){
 				$blogs = db_reads('page',array('type' => $type, 'status' => 1,'catid' => $catid),$order);
 				$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1,'catid' => $catid),$order);
 			}else{
-				$blogs = db_reads('page',array('type' => $type, 'status' => 1),$order);
-				$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1),$order);
+				if($type == 'event'){
+					$blogs = db_reads('page',array('type' => $type, 'status' => 1,'date' >= strtotime(date('Y-m-d'))),$order);
+					$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1),$order);
+				}else{
+					$blogs = db_reads('page',array('type' => $type, 'status' => 1),$order);
+					$count_blogs = count_db_reads('page',array('type' => $type, 'status' => 1),$order);
+				}
 			}
 			
 			$view['blogs'] = $blogs;

@@ -49,6 +49,9 @@
 							</div>
 						</div>
 						<div class="panel-body">
+							<? if($error){?>
+								<label style="color:red"><?= $error;?></label>
+							<? }?>
 							<form role="form" method="post" action="<?= current_url();?>">
 								<div class="form-group">
 									<label>Username:</label>
