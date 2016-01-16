@@ -25,11 +25,18 @@
 					</div> <!-- end: panel heading -->
 					<div class="panel-body">
 						<form role="form" method="post" id="formNwsEdit" action="<?= current_url();?>">
-							
+							<? if($sosmed->name == 'custom'){?>
+							<div class="form-group">
+								<label>Isi:</label>
+								<textarea id="content" name="url" class="form-control" rows="4"><?= $sosmed->url;?></textarea>
+							</div>	
+							<? }else{?>
 							<div class="form-group">
 								<label>Url:</label>
 								<input type="text" name="url"  class="form-control"><?= $sosmed->url;?>
-							</div>
+							</div>	
+							<? }?>
+							
 							<div class="form-group">
 								<label>Status:</label>
 								<label class="checkbox-inline">

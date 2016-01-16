@@ -36,8 +36,7 @@
 
 							<h3 class="home-title">Social Media</h3>
 							<div class="embed-timeline">
-							<a class="twitter-timeline"  href="https://twitter.com/hashtag/kotasolo" data-widget-id="684208181883453440">#kotasolo Tweets</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							<?= view_mod('sosmed','custom');?>
 							</div>
 						</div>
 					</div>

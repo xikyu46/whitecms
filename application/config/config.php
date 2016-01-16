@@ -504,5 +504,5 @@ $config['rewrite_short_tags'] = TRUE;
 */
 $config['proxy_ips'] = '';
 $config['document_root'] = getcwd().'/';
-$config['limit_page'] = 5;
+$config['limit_page'] = 10;
 
