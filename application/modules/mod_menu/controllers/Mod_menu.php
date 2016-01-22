@@ -17,8 +17,15 @@ Class Mod_menu extends MX_Controller{
 		if($id){
 			$updateMenu['title'] = $this->input->post('title');
 			$updateMenu['title_en'] = $this->input->post('title_en');
-			$updateMenu['post_id'] = $this->input->post('post_id');
-			$updateMenu['link'] = $this->input->post('link');
+// 			$updateMenu['post_id'] = $this->input->post('post_id');
+// 			$updateMenu['link'] = $this->input->post('link');
+			if($this->input->post('post_id')){
+				$updateMenu['post_id'] = $this->input->post('post_id');
+				$updateMenu['link'] =false;
+			}else{
+				$updateMenu['post_id'] =false;
+				$updateMenu['link'] = $this->input->post('link');
+			}
 			$updateMenu['parent_id'] = $this->input->post('parent_id');
 			$updateMenu['position'] = $this->input->post('position');
 			$updateMenu['hide'] = $this->input->post('hide');
@@ -33,8 +40,13 @@ Class Mod_menu extends MX_Controller{
 		$result = jsonSrc();
 			$createMenu['title'] = $this->input->post('title');
 			$createMenu['title_en'] = $this->input->post('title_en');
-			$createMenu['post_id'] = $this->input->post('post_id');
-			$createMenu['link'] = $this->input->post('link');
+			if($this->input->post('post_id')){
+				$createMenu['post_id'] = $this->input->post('post_id');
+				$createMenu['link'] =false;
+			}else{
+				$createMenu['post_id'] =false;
+				$createMenu['link'] = $this->input->post('link');
+			}
 			$createMenu['parent_id'] = $this->input->post('parent_id');
 			$createMenu['position'] = $this->input->post('position');
 			$createMenu['hide'] = $this->input->post('hide');

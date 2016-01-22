@@ -11,7 +11,7 @@
 						<li><a href="<?= base_url($pages[$menu_row->post_id]);?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
 					<? }?>
 				<? }else{?>
-					<li><a href="<?= base_url($menu_row->link);?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
+					<li><a href="<?= $menu_row->link;?>"><?= $menu_row->{'title'.$lang_sess};?></a></li>
 				<? }?>
 				
 			<? }else{?>
@@ -19,7 +19,7 @@
 					<? if($menu_row->post_id){?>
 						<a href="<?= base_url($pages[$menu_row->post_id]);?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $menu_row->title;?><span class="caret"></span></a>
 					<? }else{?>
-						<a href="<?= base_url($menu_row->link);?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $menu_row->title;?><span class="caret"></span></a>
+						<a href="<?= $menu_row->link;?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $menu_row->title;?><span class="caret"></span></a>
 					<? }?>
 					
 					
@@ -30,14 +30,14 @@
 								<? if($submenuRow->post_id){?>
 									<li><a href="<?= base_url($pages[$submenuRow->post_id]);?>"><?= $submenuRow->{'title'.$lang_sess};?></a></li>
 								<? }else{?>
-									<li><a href="<?= base_url($submenuRow->link);?>"><?= $submenuRow->{'title'.$lang_sess};?></a></li>
+									<li><a href="<?= $submenuRow->link;?>"><?= $submenuRow->{'title'.$lang_sess};?></a></li>
 								<? }?>
 							<? }else{?>
 								<li class="dropdown">
 									<? if($submenuRow->post_id){?>
 										<a href="<?= base_url($pages[$submenuRow->post_id]);?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $submenuRow->title;?><span class="caret"></span></a>
 									<? }else{?>
-										<a href="<?= base_url($submenuRow->link);?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $submenuRow->title;?><span class="caret"></span></a>
+										<a href="<?= $submenuRow->link;?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $submenuRow->title;?><span class="caret"></span></a>
 									<? }?>	
 									<ul class="dropdown-menu">
 									<? foreach($submenuRow->submenu as $subsubmenuRow){?>
@@ -45,7 +45,7 @@
 											<? if($subsubmenuRow->post_id){?>
 												<li><a href="<?= base_url($pages[$subsubmenuRow->post_id]);?>"><?= $subsubmenuRow->{'title'.$lang_sess};?></a></li>
 											<? }else{?>
-												<li><a href="<?= base_url($subsubmenuRow->link);?>"><?= $subsubmenuRow->{'title'.$lang_sess};?></a></li>
+												<li><a href="<?= $subsubmenuRow->link;?>"><?= $subsubmenuRow->{'title'.$lang_sess};?></a></li>
 											<? }?>
 										<? }?> 
 									<? }?>

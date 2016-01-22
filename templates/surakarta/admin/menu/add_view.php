@@ -50,12 +50,18 @@
 							<div class="form-group">
 								<label>Relation</label>
 								<? if($page){?>
-									<select name="post_id" class="form-control">
+									<select name="post_id" id="menurelation" class="form-control">
+										<option value="">-- External Url--</option>
 										<? foreach($page as $pageRow){?>
+											
 											<option value="<?= $pageRow->id;?>"><?= $pageRow->title;?></option>
 										<? }?>
 									</select>
 								<? }?>
+							</div>
+							<div id="exturl" class="form-group">
+								<label>Ext Url</label>
+								<input class="form-control" name="link" />
 							</div>
 							<div class="form-group">
 								<label>Hide</label>
@@ -74,6 +80,17 @@
 	</div> <!-- end: page content container -->
 
 <script>
+$(document).ready(function(){
+	$('#menurelation').change(function(){
+		var menuval = $(this).val();
+		if(!menuval){
+			$('#exturl').show();
+		}else{
+			$('#exturl').val('');
+			$('#exturl').hide();
+		}
+	})
+});
 formGeneral('#formMenuEdit');
 </script>
 <? $this->load->view(tpldir('admin/footer_view'));?>

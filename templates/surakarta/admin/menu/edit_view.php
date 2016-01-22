@@ -50,12 +50,18 @@
 							<div class="form-group">
 								<label>Relation</label>
 								<? if($page){?>
-									<select name="post_id" class="form-control">
+									<select name="post_id" id="menurelation" class="form-control">
+										<option value="">-- External Url--</option>
 										<? foreach($page as $pageRow){?>
 											<option value="<?= $pageRow->id;?>" <? if($menu->post_id == $pageRow->id){echo "selected";} ?> ><?= $pageRow->title;?></option>
 										<? }?>
 									</select>
 								<? }?>
+							</div>
+							
+							<div id="exturl" <? if($menu->post_id){echo "style='display:none'";}?> class="form-group">
+								<label>Ext Url</label>
+								<input class="form-control" name="link" value="<?= $menu->link;?>" />
 							</div>
 							<div class="form-group">
 								<label>Position</label>
@@ -80,6 +86,17 @@
 	</div> <!-- end: page content container -->
 
 <script>
+$(document).ready(function(){
+	$('#menurelation').change(function(){
+		var menuval = $(this).val();
+		if(!menuval){
+			$('#exturl').show();
+		}else{
+			$('#exturl').val('');
+			$('#exturl').hide();
+		}
+	})
+});
 formGeneral('#formMenuEdit');
 
 function deleteMenu(id){
