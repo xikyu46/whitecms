@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'page';
 $route['page'] = "page";
+$route['rss.xml'] = "page/rss";
 $route['search'] = "search";
 $route['admin'] = 'admin/login';
 $route['404_override'] = '';
@@ -60,7 +61,7 @@ $route['blog/video/(:any)'] = "blog/video/$1";
 $route['blog/(:any)'] = "blog/index/$1";
 $route['news/(:any)'] = "page/news/$1";
 $route['translate_uri_dashes'] = FALSE;
-
+$route['translate_uri_dashes'] = FALSE;
 
 $route['mod_template'] = "mod_template";
 $route['mod_template/(:any)'] = "mod_template/$1";
