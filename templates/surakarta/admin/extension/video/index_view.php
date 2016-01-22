@@ -88,6 +88,5 @@ function deletePage(id){
 	});
 }
 </script>
-</script>
 <? $this->load->view(tpldir('admin/footer_view'));?>
  

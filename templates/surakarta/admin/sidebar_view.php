@@ -11,6 +11,9 @@
 				<a href="<?= base_url('admin/menu');?>"><i class="fa fa-fw fa-file-text"></i> Navigation</a>
 			</li>
 			<li>
+				<a href="<?= base_url('admin/footer');?>"><i class="fa fa-fw fa-file-text"></i> Footer</a>
+			</li>
+			<li>
 				<a href="<?= base_url('admin/news');?>"><i class="fa fa-fw fa-twitter"></i> News</a>
 			</li>
 			<li>
