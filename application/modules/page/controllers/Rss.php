@@ -19,12 +19,16 @@ Class Rss extends MX_Controller{
 		$xml['link'] = base_url();
 		$xml['item'] = false;
 		if($news){
+			$index =0;
 			foreach($news as $newsrow){
-				$temp=false;
-				$temp['title'] = $newsrow->title;
-				$temp['link'] = base_url($newsrow->url);
-				$temp['description'] = $newsrow->content;
-				$xml['item'][] = $temp;
+				if($index < 5){
+					$temp=false;
+					$temp['title'] = $newsrow->title;
+					$temp['link'] = base_url($newsrow->url);
+					$temp['description'] = $newsrow->content;
+					$xml['item'][] = $temp;
+				}
+				$index++;
 			}
 		}
 		header("Content-Type: text/xml");
