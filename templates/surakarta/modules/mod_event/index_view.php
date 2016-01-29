@@ -2,7 +2,7 @@
  <h3 class="home-title">Events</h3>
  <div class="row">
 	<? if($event){?>
-		<? for($i = count($event)-1; $i >= 0 ; $i--){?>
+		<? for($i = 0; $i < count($event) ; $i++){?>
 			<div class="col-md-3">
 				<div class="event-date kuning">
 					<i class="fa fa-calendar"></i>
