@@ -5,7 +5,7 @@
 		<div class="row"> <!-- start: Page Heading -->
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Facebook Share <small>Edit</small>
+					Google Plus Share <small>Edit</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li class="active">
@@ -21,7 +21,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Edit  Facebook Configuration</h3>
+						<h3 class="panel-title">Edit  Google Plus Configuration</h3>
 					</div> <!-- end: panel heading -->
 					<div class="panel-body">
 						<form role="form" method="post" id="formNwsEdit" action="<?= current_url();?>">
@@ -32,7 +32,7 @@
 									</label>
 								</div>
 								<div class="form-group">
-									<input type="hidden" name="sosmed" value="facebook">
+									<input type="hidden" name="sosmed" value="googleplus">
 									<input type="hidden" name="relid" value="<?= $share->id;?>">
 									<input class="btn btn-success" type="submit" value="Submit">
 								</div>

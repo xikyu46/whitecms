@@ -19,6 +19,11 @@ Class Share extends ADMIN_Controller{
 				$view['share_details'] = $shareDetails;
 				$view['share'] = $shareRow;
 				$this->load->view(tpldir('admin/extension/share/edit/facebook_view'),$view);
+			}elseif($shareRow->name == 'googleplus'){
+				$shareDetails = db_reads('mod_share_detail',array('relid' => $id));
+				$view['share_details'] = $shareDetails;
+				$view['share'] = $shareRow;
+				$this->load->view(tpldir('admin/extension/share/edit/googleplus_view'),$view);
 			}
 		}else{
 			$result = jsonSrc();
@@ -44,6 +49,10 @@ Class Share extends ADMIN_Controller{
 				$updateContent['status'] = $this->input->post('status');
 				db_update('mod_share',array('id' => $relid),$updateContent);
 			}elseif($sosmed == 'facebook'){
+				$updateContent = false;
+				$updateContent['status'] = $this->input->post('status');
+				db_update('mod_share',array('id' => $relid),$updateContent);
+			}elseif($sosmed == 'googleplus'){
 				$updateContent = false;
 				$updateContent['status'] = $this->input->post('status');
 				db_update('mod_share',array('id' => $relid),$updateContent);
