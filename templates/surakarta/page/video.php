@@ -25,7 +25,7 @@
 <div class="single-meta">
   <div class="row">
     <div class="col-md-10 col-sm-9">
-      <h4 class="single-categories">Video</h4>
+      <h4 class="single-categories">lorem</h4>
       <h2 class="single-title">
         <?= $video->text;?>
       </h2>
@@ -37,6 +37,9 @@
           <li>
             <a href="#">
             <span class="fa-stack fa-lg">
+            <?= view_mod('share','twitter');?>
+			<?= view_mod('share','facebook');?>
+			<?= view_mod('share','googleplus');?>
               <i class="fa fa-square-o fa-stack-2x"></i>
               <i class="fa fa-twitter fa-stack-1x"></i>
             </span>

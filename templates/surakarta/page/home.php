@@ -15,9 +15,7 @@
 	</div>
 	<div class="container">
 		<div class="home-event">
-			<?= view_mod('share','twitter');?>
-			<?= view_mod('share','facebook');?>
-			<?= view_mod('share','googleplus');?>
+
 			<?= view_mod('event','outclient');?>
 			<h4 class="more"><a href="<?= base_url('blog/cat/event');?>">More Events <i class="fa fa-angle-right"></i></a></h4>
 			<hr>
